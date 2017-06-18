@@ -1,0 +1,779 @@
+/*CSS for Header*/
+
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
+.header {
+	float:right !important;
+}
+
+body, h3, h1, h2, div, p {
+	font-family: 'Lato', serif;
+}
+
+.search {
+	padding: 27px;
+}
+
+.search .search-block {
+    display: inline-block;
+    position: relative;
+    background: #ebebeb;
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    border-radius: 22px;
+}
+
+.search input[type="text"] {
+    color: #939393;
+    background: none;
+    display: block;
+    margin: 0;
+    float: left;
+    width: 370px;
+    font-size: 16px;
+    line-height: 20px;
+    height: 44px;
+    padding: 12px 35px 12px 20px;
+    border: none;
+    border-radius: 22px;
+    box-sizing: border-box;
+    outline:none;
+}
+
+.search button {
+    background: none;
+    border: none;
+    padding: 0;
+    -webkit-appearance: none;
+    position: absolute;
+    right: 3px;
+    display: inline-block;
+    outline: none;
+    outline-offset: 0;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    font: 400 18px/44px "FontAwesome";
+    height: 44px;
+    width: 44px;
+    color: #929292;
+    vertical-align: top;
+}
+
+.logo {
+    padding: 40px;
+}
+
+.header.user {
+	margin-top: 10px;
+    color: #337ab7;
+}
+
+.header a[href*="/logout"] {
+	margin-left: -10px;
+}
+
+.header.user-icon {
+	margin: 4px 5px 0px 0px;
+}
+
+.header.user-icon a {
+	padding: 0px !important;
+}
+
+.header.count {
+	margin-top: 10px;
+    margin-right: 10px;
+}
+
+.header.count span {
+	background-color: #EBEBEB;
+    border: 1px solid rgb(245,245,245);
+    border-radius: 50%;
+    color: grey;
+}
+
+/*CSS for home page*/
+#home {
+	margin-top: 30px;
+}
+
+#home .header_modules {
+    margin-top: 38px;
+}
+
+#home .parallax {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    background: #000;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+#home .parallax > div {
+	background-image: url("/resources/image/main.jpg");
+    width: 1225px;
+    height: 430px;
+    padding: 144px 0 146px;
+    text-align: center;
+    position: relative;
+    background-position: top!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed!important;
+}
+
+#home .container {
+	font: bold 48px/58px "PT Serif", serif;
+	color: #fff;
+}
+
+#home #breakfast {
+	margin-top: 30px;
+}
+
+#home h3 {
+    font-size: 20px;
+    line-height: 36px;
+    font-weight: 600;
+    color: #000;
+    border-bottom: 1px solid #dadada;
+    margin: 0px;
+    padding-top: 10px;
+    background: #f3f3f3;
+    padding-left: 15px;
+}
+
+#home .content {
+	margin-top: 20px;
+}
+
+#home .content img {
+	width: 200px;
+    height: 200px;
+}
+
+#home .content .caption {
+	font: 400 16px/24px "PT Serif",serif;
+    margin-bottom: 21px;
+    letter-spacing: -.5px;
+    color: #1E1F21;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+#home .content > div {
+	text-align: center;
+	width: 24%;
+	display: inline-block;
+}
+
+#home .price {
+	color: red;
+	font-weight: 700px;
+}
+
+/*CSS products Page*/
+.error {
+	color: #b9041c;
+	font-weight: bold;
+}
+
+.errorSignUp {
+	color: #b9041c;
+	font-weight: 700;
+	font-size: 11px;
+}
+
+.error.message {
+	margin-top: 10px;
+}
+
+.nav-pills>li>a {
+	border-radius: 0px !important;
+}
+
+.errorInput {
+	border: 1px solid red;
+}
+
+#products {
+	background-image: url("/resources/image/home.jpg");
+	height: 560px;
+	width: 1240px;
+	color: white;
+	padding-top: 20px;
+}
+
+#products h3 {
+	text-align: center;
+	margin: 0px;
+}
+
+#products table {
+    width: 80% !important;
+    margin: auto !important;
+    margin-top: 50px !important;
+    background-image: url(../image/bg-white-lock.png);
+    height: 275px;
+    overflow: scroll;
+}
+
+#products .glyphicon-edit:before {
+    content: "\e065";
+}
+
+#products .glyphicon-remove:before {
+    content: "\e014";
+}
+
+#products .btn-primary {
+	margin-top: 10px;
+	margin-right: 10%;
+}
+
+#products table #action {
+	padding-left: 67px;
+}
+
+#products td.action {
+	width: 50px;
+}
+
+#products #addLnk {
+	margin-left: 10%;	
+}
+
+#products .pagination {
+	margin-left: 10%;
+}
+
+#products .pagination >li >a {
+	min-width: 40px;
+    text-align: center;
+}
+
+/*CSS Modify Product*/
+
+#modifyProduct {
+	background-color: #7E8F7C;
+	height: 600px;
+}
+
+#modifyProduct h3 {
+	text-align: center;
+	margin: 0px;
+	padding-top: 20px;
+}
+
+#modifyProduct form {
+	width: 80%;
+	margin-left: 10px;
+}
+
+/*CSS for persons Page*/
+#persons {
+	background-image: url("/resources/image/home.jpg");
+	height: 560px;
+	width: 1240px;
+	color: white;
+	padding-top: 20px;
+}
+
+#persons h3 {
+	text-align: center;
+	margin: 0px;
+}
+
+#persons table {
+    width: 80% !important;
+    margin: auto !important;
+    margin-top: 50px !important;
+    background-image: url("/resources/image/bg-white-lock.png");
+}
+
+#persons table #action {
+	padding-left: 100px;
+}
+
+#persons #addLnk {
+	margin-right: 10%;
+	float: right	
+}
+
+#persons .pagination {
+    margin-left: 10%;
+    display: block;
+}
+
+/*CSS Modify Person*/
+#modifyPerson {
+	background-color: #7E8F7C;
+	height: 680px;
+}
+
+#modifyPerson h3 {
+	text-align: center;
+	margin: 0px;
+	padding-top: 20px;
+}
+
+#modifyPerson form {
+	width: 90%;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#modifyPerson .form-content {
+	column-count: 2;
+}
+
+#modifyPerson #group1 {
+    float: left;
+    width: 40%;
+}
+
+#modifyPerson #group2 {
+    float: right;
+    width: 40%;
+}
+
+#modifyPerson #group3 {
+	clear: both;
+}
+
+/*CSS for Login security*/
+
+#login {
+    position: absolute;
+    z-index: -1;
+    background: url("../image/city.jpg") 50% 50% / cover no-repeat fixed padding-box border-box rgb(43, 54, 67);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+    border-width: 0px;
+    border-style: none;
+    border-color: rgb(51, 51, 51);
+}
+
+#login .btn-success {
+	width: 100%;
+}
+
+#login .btn-primary {
+	width: 100%;
+    margin-top: -10px;
+}
+
+#login .divider-break {
+    border-top: 1px solid #e7e7e7;
+    margin-top: 25px;
+    z-index: 1;
+    text-align: center;
+}
+
+#login .checkbox {
+	color: white;
+}
+
+#login .divider-break p {
+	position: relative;
+    top: -20px;
+    color: white;
+    opacity: 0.5;
+}
+
+#login .container {
+	width: 30%;
+    margin-top: 10%;
+    background-image: url("../image/bg-white-lock.png");
+    height: 370px;
+    padding:20px;
+}
+
+#login a[href="signup"] {
+	color: white;
+	font-weight: 400;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+#login a[href="signup"]:hover {
+	text-decoration: none;
+}
+
+/*CSS for access denied page*/
+#error .container {
+	background-image: url("../image/403.jpg");
+    height: 563px;
+    width: 1000px;
+    margin: auto;
+}
+
+#error {
+	background: #ECEFF1;
+}
+
+/*CSS for error 404*/
+#error404 .container {
+	background-image: url("../image/404.jpg");
+    height: 563px;
+    width: 1000px;
+    margin: auto;
+}
+
+#error404 {
+	background: #ECEFF1;
+}
+
+/*CSS for order*/
+#shoppingCart {
+	margin-bottom: 30px;
+	color: #111;
+}
+
+#shoppingCart span {
+	color: #b12704;
+    font-weight: 700!important;
+    font-size: 20px!important;
+}
+
+#shoppingCart div .goodCheckout h3 {
+   	display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin-right: 40px;
+    width: 350px;
+    top: -20px;
+    color: #0066c0;
+    font-weight: 700!important;
+    font-size: 17px!important;
+    line-height: 1.255!important;
+}
+
+#shoppingCart div.orderList h1 {
+	padding-top: 5px;
+    padding-left: 10px;
+    border-bottom: 1px solid #DDD;
+    height: 60px;
+}
+
+#shoppingCart div .goodCheckout {
+    border-bottom: 1px solid #DDD;
+    padding: 10px;
+}
+
+#shoppingCart div .goodCheckout a {
+     display: inline-block;
+     margin-right: 40px;
+     width: 250px;
+}
+
+#shoppingCart div .goodCheckout a:hover {
+	cursor: pointer;
+}
+
+#shoppingCart div .goodCheckout p {
+	display: inline-block;
+    vertical-align: top;
+    position: relative;
+    color: #b12704!important;
+ 	font-weight: 700!important;
+ 	font-size: 17px!important;
+    line-height: 1.255!important;
+}
+
+#shoppingCart div .goodCheckout .delete {
+	display: inline-block;
+    width: 20px;
+    margin-left: 45px;
+    vertical-align: top;
+    position: relative;
+    color: #0066C0;
+}
+
+#shoppingCart div .goodCheckout img {
+	width: 100px;
+    height: 100px;
+}
+
+#shoppingCart .orderList {
+    margin-bottom: 20px;
+    width: 70%;
+    margin-left: 10%;
+    background-color: #FFFFFF;
+    margin-top: 30px;
+}
+
+#shoppingCart #checkoutBtn {
+	float: right;
+	position: fixed;
+	bottom: 5px;
+	right: 20px;
+	color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    width: 150px;
+    font-weight: 700;
+}
+
+#shoppingCart a:hover {
+	text-decoration: none;
+}
+
+#shoppingCart .total {
+    text-align: end;
+    margin-right: 20%;
+    font-size: 20px;
+    color: #111;
+    font-weight: 700;
+}
+
+/* CSS for Thank you page*/
+#thankyou .container {
+	background-image: url("../image/thank-you.jpg");
+    height: 563px;
+    width: 1000px;
+    margin: auto;
+}
+
+#thankyou {
+	background: #ECEFF1;
+	border-top: 1px solid #3E4349;
+}
+
+/* CSS for Order Management*/
+#orders {
+	background-image: url("/resources/image/coffee.jpg");
+	height: 560px;
+	width: 1240px;
+	color: white;
+	padding-top: 20px;
+}
+
+#orders h3 {
+	text-align: center;
+	margin: 0px;
+}
+
+#orders table {
+    width: 80% !important;
+    margin: auto !important;
+    margin-top: 50px !important;
+}
+
+#orders a {
+	color: deepskyblue;
+}
+
+/* CSS for order Detail*/
+#orderDetail {
+	margin-bottom: 30px;
+	color: #111;
+}
+
+#orderDetail span {
+	color: #b12704;
+    font-weight: 700!important;
+    font-size: 20px!important;
+}
+
+#orderDetail div .goodCheckout h3 {
+   	display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin-right: 40px;
+    width: 150px;
+    top: -20px;
+    color: #0066c0;
+    font-weight: 700!important;
+    font-size: 17px!important;
+    line-height: 1.255!important;
+}
+
+#orderDetail div.orderList h1 {
+	padding-top: 5px;
+    padding-left: 10px;
+    border-bottom: 1px solid #DDD;
+    height: 60px;
+}
+
+#orderDetail div .goodCheckout {
+    border-bottom: 1px solid #DDD;
+    padding: 10px;
+}
+
+#orderDetail div .goodCheckout a {
+     display: inline-block;
+     margin-right: 40px;
+     width: 250px;
+}
+
+#orderDetail div .goodCheckout a:hover {
+	cursor: pointer;
+}
+
+#orderDetail div .goodCheckout p {
+	display: inline-block;
+    vertical-align: top;
+    position: relative;
+    color: #b12704!important;
+ 	font-weight: 700!important;
+ 	font-size: 17px!important;
+    line-height: 1.255!important;
+    width: 150px;
+}
+
+#orderDetail div .goodCheckout img {
+	width: 100px;
+    height: 100px;
+}
+
+#orderDetail .orderList {
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: 10%;
+    background-color: #FFFFFF;
+    margin-top: 30px;
+}
+
+#orderDetail #backBtn {
+	float: right;
+	position: fixed;
+	bottom: 5px;
+	right: 20px;
+	color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    width: 150px;
+    font-weight: 700;
+}
+
+#orderDetail a:hover {
+	text-decoration: none;
+}
+
+/* CSS for Sign Up*/
+#signUp {
+	background-image: url("../image/signUp-background.jpg");
+ 	background-position: top!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed!important;
+    width: 1225px;
+}
+
+#signUp .centered-form{
+	margin-top: 60px;
+}
+
+#signUp .centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+	
+}
+
+#signUp .input-sm {
+	height: 40px;
+}
+
+#signUp input[type=submit].btn-block {
+	height: 40px !important;
+}
+
+/* Footer*/
+/* #footer .container{ */
+/* 	background-image: url("../image/footer.jpg"); */
+/* 	height: 300px; */
+/*     width: 1200px; */
+/*     max-width: 1200px; */
+/* } */
+
+footer {
+    margin-top: 30px;
+    padding-top: 60px;
+    clear: both;
+    overflow: hidden;
+    background-color: #f9e59e;
+}
+
+.block .block-heading {
+    color: #df574b;
+    font-size: 14px;
+    margin: 0 0 15px;
+    font-family: 'Roboto Slab',serif;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.block .block-content li {
+    padding: 2px 0 1px;
+}
+
+.block .block-content li a {
+    color: #b09769;
+    font-size: 12px;
+    word-wrap: break-word;
+}
+
+.block .block-content .foot-phone div.fleft {
+    margin-left: -5px
+}
+
+.block .block-content .foot-phone div {
+    color: #b09769;
+    line-height: 22px;
+    font-size: 11px;
+}
+
+.block .block-content .foot-phone span {
+    line-height: normal;
+    font-size: 36px;
+    color: #df574b;
+    margin-right: 5px;
+}
+
+#copyright {
+    background-color: #4a403d;
+    margin-top: 75px;
+    padding: 25px 0;
+    font-size: 11px;
+    color: #908481;
+}
+
+.fleft {
+    float: left;
+}
+
+.extra-wrap {
+    overflow: hidden;
+}

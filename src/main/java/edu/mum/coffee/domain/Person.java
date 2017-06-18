@@ -7,6 +7,9 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
+import javax.validation.Valid;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -14,12 +17,23 @@ public class Person {
 	@Id
 	@GeneratedValue
 	private long id;
+
+	@NotEmpty
 	private String firstName;
+	
+	@NotEmpty
 	private String lastName;
+	
+	@NotEmpty
 	private String email;
+	
 	@OneToOne(cascade = CascadeType.ALL)
+	@Valid
 	private Address address;
+	
+	@NotEmpty
 	private String phone;
+	
 	private boolean enable;
 
 	public long getId() {

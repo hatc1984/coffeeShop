@@ -7,11 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class User extends Person {
-
-	private String userName;
+	
+	@NotNull
+	@NotEmpty
 	private String password;
 	
 	@Transient
@@ -20,14 +24,6 @@ public class User extends Person {
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Set<Authorities> authorities;
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	
 	public String getPassword() {
 		return password;
 	}
