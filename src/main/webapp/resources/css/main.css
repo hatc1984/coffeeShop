@@ -714,7 +714,6 @@ body, h3, h1, h2, div, p {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed!important;
-    width: 1225px;
 }
 
 #signUp .centered-form{

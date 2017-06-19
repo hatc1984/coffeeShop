@@ -1,8 +1,13 @@
 .main-content {
-	margin: 100px auto;
-	max-width: 300px;
-	background-image: url("../image/signUp-background.jpg");
-	background-color: #cccccc;
+	background-image: url("../image/coffe_login.jpg");
+	
+}
+
+.login {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    color: white;
 	
 }
 
