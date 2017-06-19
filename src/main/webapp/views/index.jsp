@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8" />
 <title>Index Page</title>
-<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
     Logged user: <span sec:authentication="name"></span> <br/> 

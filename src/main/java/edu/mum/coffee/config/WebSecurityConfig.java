@@ -33,14 +33,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/", "/home", "/index", "/login").permitAll()
+                .antMatchers("/", "/home", "/index", "/login", "/signup").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
             	.loginPage("/login")
                 .usernameParameter("user")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/index")
+                .defaultSuccessUrl("/")
                 .failureUrl("/login?error")
             	.and()
             .logout()
@@ -49,8 +49,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
     }
 
-//	@Autowired
-//	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//		auth.inMemoryAuthentication().withUser("super").password("pw").roles("ADMIN");
-//	}
 }

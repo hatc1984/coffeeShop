@@ -22,6 +22,7 @@ public class UserService {
 	
 	public User save(User user) {
 		user.setEnable(true);
+		user.setPassword(encodePassword(user.getPassword()));
 
 		Set<Authorities> authorities = new HashSet<>();
 		Authorities authority = new Authorities();
