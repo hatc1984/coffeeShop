@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<title>Login Page</title>
-<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+	<link href="../resources/css/style_2.css" th:href="@{/css/style.css}" rel="stylesheet" />
+	<meta charset="UTF-8" />
+	<title>Login Page</title>
 </head>
 <body>
     <div class="main-content">

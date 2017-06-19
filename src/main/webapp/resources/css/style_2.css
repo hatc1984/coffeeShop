@@ -1,0 +1,30 @@
+.main-content {
+	margin: 100px auto;
+	max-width: 300px;
+	background-image: url("../image/signUp-background.jpg");
+	background-color: #cccccc;
+	
+}
+
+.success {
+	color: green;
+}
+
+.error {
+	color: red;
+}
+
+.field-error {
+	border: 1px solid red;
+}
+
+input {
+	margin-bottom: 5px;
+}
+
+em {
+	color: red;
+	display: block;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
