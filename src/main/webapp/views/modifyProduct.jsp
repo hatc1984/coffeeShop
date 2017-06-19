@@ -12,7 +12,15 @@
 	</head>
 	<body>
 		<div id="modifyProduct">
-			<h3>Add Or Update Product</h3>
+			<c:choose>
+				<c:when test="${product.id == 0}">
+					<h3><spring:message text="Add Product" /></h3>
+				</c:when>
+				<c:otherwise>
+					<h3><spring:message text="Update Product" /></h3>
+				</c:otherwise>
+			</c:choose>
+			
 			<c:choose>
 				<c:when test='${product.id ==0}'><c:url var="productACtion" value="modify" /></c:when>
 				<c:otherwise><c:url var="productACtion" value="product/modify" /></c:otherwise>
@@ -23,7 +31,7 @@
 				<div class="form-group">
 					<c:if test="${product.id > 0}">
 						<form:label path="id">
-							<spring:message text="ID" />
+							<spring:message text="Id" />
 						</form:label>
 						<form:input path="id" readonly="true" size="8" disabled="true"
 							id="productId" class="form-control" />

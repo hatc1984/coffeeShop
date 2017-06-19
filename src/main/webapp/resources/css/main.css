@@ -205,6 +205,13 @@ body, h3, h1, h2, div, p {
 	background-size: cover;
 }
 
+#products .productNotExist {
+    position: absolute;
+    left: 35%;
+    top: 45%;
+    color: darkcyan;
+}
+
 #products h3 {
 	text-align: center;
 	margin: 0px;
@@ -217,6 +224,12 @@ body, h3, h1, h2, div, p {
     background-image: url(../image/bg-white-lock.png);
     height: 275px;
     overflow: scroll;
+}
+
+#products .modal-dialog {
+	left: 0% !important;
+	color: black;
+    width: 350px;
 }
 
 #products .glyphicon-edit:before {
@@ -281,6 +294,21 @@ body, h3, h1, h2, div, p {
 	background-size: cover;
 }
 
+#persons .productNotExist {
+  	position: absolute;
+    left: 35%;
+    top: 45%;
+    color: cornsilk;
+}
+
+#persons .productNotExistAddBtn {
+	margin-right: 10%;
+    float: right;
+    position: absolute;
+    left: 46%;
+    top: 60%;
+}
+
 #persons h3 {
 	text-align: center;
 	margin: 0px;
@@ -310,7 +338,7 @@ body, h3, h1, h2, div, p {
 /*CSS Modify Person*/
 #modifyPerson {
 	background-color: #7E8F7C;
-	height: 680px;
+	height: 600px;
 }
 
 #modifyPerson h3 {
@@ -321,8 +349,9 @@ body, h3, h1, h2, div, p {
 
 #modifyPerson form {
 	width: 90%;
-	margin-left: 10px;
+	margin-left: 5%;
 	margin-right: 10px;
+    margin-top: 15px;
 }
 
 #modifyPerson .form-content {

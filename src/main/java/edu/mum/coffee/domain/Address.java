@@ -12,13 +12,13 @@ public class Address {
 	@Id
 	@GeneratedValue
 	private int id;
-	@NotEmpty
+	@NotEmpty(message = "City not empty")
 	private String city;
-	@NotEmpty
+	@NotEmpty(message = "State not empty")
 	private String state;
-	@NotEmpty
+	@NotEmpty(message = "Country not empty")
 	private String country;
-	@NotEmpty
+	@NotEmpty(message = "Zipcode not empty")
 	private String zipcode;
 	
 	public Address(){}

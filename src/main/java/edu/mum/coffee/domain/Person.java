@@ -18,20 +18,20 @@ public class Person {
 	@GeneratedValue
 	private long id;
 
-	@NotEmpty
+	@NotEmpty(message = "Fistname not empty")
 	private String firstName;
 	
-	@NotEmpty
+	@NotEmpty(message = "Lastname not empty")
 	private String lastName;
 	
-	@NotEmpty
+	@NotEmpty(message = "Email not empty")
 	private String email;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@Valid
 	private Address address;
 	
-	@NotEmpty
+	@NotEmpty(message = "Phone not empty")
 	private String phone;
 	
 	private boolean enable;
