@@ -43,7 +43,8 @@
 					<form:label path="description">
 						<spring:message text="Description"/>
 					</form:label>
-					<form:input path="description" class="form-control" id="description" cssErrorClass="form-control errorInput"/>
+					
+					<form:textarea rows="5" cols="10" class="form-control" path="description" id="description" cssErrorClass="form-control errorInput"></form:textarea>
 					<form:errors path="description" cssClass="error"/>
 				</div>
 				
@@ -60,9 +61,10 @@
 						<spring:message text="Type" /> 
 					</form:label>
 					<form:select path="productType" id="productType" class="form-control">
-						<form:option value="BREAKFAST">Breakfast</form:option>
-						<form:option value="LUNCH">Lunch</form:option>
-						<form:option value="DINNER">Dinner</form:option>
+						<form:option value="BREAKFAST">Breakfast Coffee</form:option>
+						<form:option value="LUNCH">Lunch Coffee</form:option>
+						<form:option value="DINNER">Dinner Coffee</form:option>
+						<form:option value="TEA">Tea</form:option>
 					</form:select>
 					<form:errors path="productType" cssClass="error"/>
 				</div>			

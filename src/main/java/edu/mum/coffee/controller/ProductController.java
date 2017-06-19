@@ -22,6 +22,23 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+	@RequestMapping(method = RequestMethod.GET)
+	public String action(@RequestParam("action") String action, @RequestParam("productId") String productId,
+			Model model) {
+		if ("delete".equals(action)) {
+			int id = Integer.parseInt(productId);
+			productService.deleteById(id);
+			return "redirect:product/list";
+		} else if ("update".equals(action)) {
+			Product product = productService.getProduct(Integer.parseInt(productId));
+			model.addAttribute("product", product);
+			return "modifyProduct";
+		} 
+		Product product = new Product();
+		model.addAttribute("product", product);
+		return "modifyProduct";
+	}
+	
 	@RequestMapping(method = RequestMethod.GET, value = "add")
 	public String addProductPage(Model model) {
 		Product product = new Product();

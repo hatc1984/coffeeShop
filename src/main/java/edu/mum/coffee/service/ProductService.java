@@ -17,13 +17,18 @@ import edu.mum.coffee.repository.ProductRepository;
 @Transactional
 public class ProductService   {
 	
-	private static final int PAGE_SIZE = 5;
+	private static final int PAGE_SIZE = 7;
 	
 	@Autowired
 	private ProductRepository productRepository;
 		
 	public Product save(Product product) {
 		return productRepository.save(product);
+	}
+	
+	public void deleteById(int productId) {
+		Product product = getProduct(productId);
+		delete(product);
 	}
 
 	public void delete(Product product) {
