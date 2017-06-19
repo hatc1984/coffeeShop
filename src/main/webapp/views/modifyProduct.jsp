@@ -27,7 +27,6 @@
 			</c:choose>
 	
 			<form:form modelAttribute="product" action="${productACtion}" method="post">
-				<form:errors path="*" cssClass="error" element="div" />
 				<div class="form-group">
 					<c:if test="${product.id > 0}">
 						<form:label path="id">
@@ -65,6 +64,14 @@
 				</div>
 				
 				<div class="form-group">
+					<form:label path="quantity">
+						<spring:message text="Quantity" />
+					</form:label>
+					<form:input path="quantity" id="quantity" class="form-control" cssErrorClass="form-control errorInput"/>
+					<form:errors path="quantity" cssClass="error"/>
+				</div>
+				
+				<div class="form-group">
 					<form:label path="productType">
 						<spring:message text="Type" /> 
 					</form:label>
@@ -75,7 +82,37 @@
 						<form:option value="TEA">Tea</form:option>
 					</form:select>
 					<form:errors path="productType" cssClass="error"/>
-				</div>			
+				</div>		
+				
+				<div class="form-group">
+					<form:label path="manufacturer">
+						<spring:message text="Manufacturer" />
+					</form:label>
+					<form:select path="manufacturer" id="manufacturer" class="form-control">
+						<form:option value="VIETNAM">Viet Nam</form:option>
+						<form:option value="USA">America</form:option>
+						<form:option value="COMLOMBIA">Columbia</form:option>
+						<form:option value="INDONESIA">Indonesia</form:option>
+					</form:select>
+					<form:errors path="manufacturer" cssClass="error"/>
+				</div>
+				
+				<div class="form-group">
+					<form:label path="created">
+						<spring:message text="Created Day" />
+					</form:label>
+					<form:input path="created" id="created" class="form-control" type="date" cssErrorClass="form-control errorInput"/>
+					<form:errors path="created" cssClass="error"/>
+				</div>
+				
+<!-- 				<div class="form-group"> -->
+<%-- 					<form:label path="image"> --%>
+<%-- 						<spring:message text="Product Image" /> --%>
+<%-- 					</form:label> --%>
+<%-- 					<form:input path="image" id="image" class="form:input-large" type="file"/> --%>
+<%-- 					<form:errors path="image" cssClass="error"/> --%>
+<!-- 				</div> -->
+					
 				<c:choose>
 					<c:when test="${product.id > 0}">
 						<button type="submit" class="btn btn-success">Update</button>

@@ -1,5 +1,9 @@
 package edu.mum.coffee.controller;
 
+import java.security.Principal;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -47,10 +51,15 @@ public class HomeController {
 		return "signUp";
 	}
 	
-	@RequestMapping("/403")
-    public String accessDenied() {
-        return "403";
-    }
+	@RequestMapping(value = "/403", method = RequestMethod.GET)
+	public String accesssDenied(Principal user) {
+		return "403";
+	}
+	
+	@RequestMapping(value = "*")
+	public String notFoundError(HttpServletRequest request) {
+		return "404";
+	}
 
     @RequestMapping("/login") 
     public String getLogin() {

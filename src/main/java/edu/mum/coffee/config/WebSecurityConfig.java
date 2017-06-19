@@ -11,8 +11,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-import edu.mum.coffee.service.UserService;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -33,20 +31,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/", "/home", "/index", "/login", "/signup").permitAll()
+				.antMatchers(AuthoritiesConfiguration.ANONYMOUS).permitAll()
+				.antMatchers(AuthoritiesConfiguration.ADMIN_AUTHORITIES).hasRole("ADMIN")
+				.antMatchers(AuthoritiesConfiguration.USER_AUTHORITIES).hasRole("USER")
                 .anyRequest().authenticated()
-                .and()
-            .formLogin()
+            .and()
+                .formLogin()
             	.loginPage("/login")
-                .usernameParameter("user")
+                .usernameParameter("username")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/home")
                 .failureUrl("/login?error")
-            	.and()
-            .logout()
+                .permitAll()
+            .and()
+            	.logout()
             	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-            	.logoutSuccessUrl("/")
-                .permitAll();
+            	.logoutSuccessUrl("/home")
+            	.invalidateHttpSession(true)
+                .permitAll()
+	        .and()
+	    	.exceptionHandling()
+	    	.accessDeniedPage("/403");
     }
 
 }

@@ -270,7 +270,8 @@ body, h3, h1, h2, div, p {
 
 #modifyProduct {
 	background-color: #7E8F7C;
-	height: 600px;
+/* 	height: 900px; */
+	padding-bottom: 100px;
 }
 
 #modifyProduct h3 {
