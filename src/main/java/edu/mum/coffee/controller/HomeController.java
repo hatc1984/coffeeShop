@@ -47,6 +47,15 @@ public class HomeController {
 		return "signUp";
 	}
 	
+	@RequestMapping("/403")
+    public String accessDenied() {
+        return "403";
+    }
+
+    @RequestMapping("/login") 
+    public String getLogin() {
+        return "login";
+    }
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String register(@ModelAttribute("user") @Validated User user, BindingResult result, Model model) {
 		if (!result.hasErrors()) {
