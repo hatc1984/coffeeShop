@@ -198,10 +198,11 @@ body, h3, h1, h2, div, p {
 
 #products {
 	background-image: url("/resources/image/home.jpg");
-	height: 560px;
+	height: 600px;
 	width: 1240px;
 	color: white;
 	padding-top: 20px;
+	background-size: cover;
 }
 
 #products h3 {
@@ -272,11 +273,12 @@ body, h3, h1, h2, div, p {
 
 /*CSS for persons Page*/
 #persons {
-	background-image: url("/resources/image/home.jpg");
-	height: 560px;
+	background-image: url("/resources/image/personManager.jpg");
+	height: 600px;
 	width: 1240px;
 	color: white;
 	padding-top: 20px;
+	background-size: cover;
 }
 
 #persons h3 {
