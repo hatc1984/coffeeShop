@@ -1,9 +1,13 @@
 package edu.mum.coffee.controller;
 
+import java.io.File;
 import java.security.Principal;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +22,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import edu.mum.coffee.domain.Image;
 import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.service.ProductService;
 
@@ -28,14 +34,14 @@ public class ProductController {
 
 	@Autowired
 	private ProductService productService;
-	
+
 	@InitBinder
 	public void initialiseBinder(WebDataBinder binder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		CustomDateEditor orderDateEditor = new CustomDateEditor(dateFormat, true);
 		binder.registerCustomEditor(Date.class, orderDateEditor);
 	}
-	
+
 	@RequestMapping(method = RequestMethod.GET)
 	public String action(@RequestParam("action") String action, @RequestParam("productId") String productId,
 			Model model) {
@@ -81,10 +87,36 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "modify", method = RequestMethod.POST)
-	public String modifyProduct(@ModelAttribute("product") @Valid Product product, BindingResult result, Model model) {
-		if (!result.hasErrors()) {
+	public String modifyProduct(@ModelAttribute("product") @Valid Product product, BindingResult result, Model model, 
+			HttpServletRequest request) {
+		
+		boolean noImageUpload = false;
+		if ("".equals(product.getProductImage().get(0).getOriginalFilename())) {
+			noImageUpload = true;
+		}
+		
+		if (!result.hasErrors() || !noImageUpload) {
+			List<Image> images = new ArrayList<>();
+			for (MultipartFile file : product.getProductImage()) {
+				String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+				if (file != null && !file.isEmpty()) {
+					try {
+						file.transferTo(new File(rootDirectory + "resources\\image\\" + file.getOriginalFilename()));
+						Image image = new Image();
+						image.setImageLink("..\resources\\image\\" + file.getOriginalFilename());
+						image.setImageName(file.getOriginalFilename());
+						images.add(image);
+					} catch (Exception e) {
+						throw new RuntimeException("Product Image saving failed", e);
+					}
+				}
+			}
+			product.setImage(images);
 			productService.save(product);
 		} else {
+			if (noImageUpload) {
+				model.addAttribute("imageError", "product Image need to upload");
+			}
 			model.addAttribute("product", product);
 			return "modifyProduct";
 		}

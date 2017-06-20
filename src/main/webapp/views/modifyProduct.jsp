@@ -26,7 +26,7 @@
 				<c:otherwise><c:url var="productACtion" value="product/modify" /></c:otherwise>
 			</c:choose>
 	
-			<form:form modelAttribute="product" action="${productACtion}" method="post">
+			<form:form modelAttribute="product" action="${productACtion}" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<c:if test="${product.id > 0}">
 						<form:label path="id">
@@ -105,13 +105,15 @@
 					<form:errors path="created" cssClass="error"/>
 				</div>
 				
-<!-- 				<div class="form-group"> -->
-<%-- 					<form:label path="image"> --%>
-<%-- 						<spring:message text="Product Image" /> --%>
-<%-- 					</form:label> --%>
-<%-- 					<form:input path="image" id="image" class="form:input-large" type="file"/> --%>
-<%-- 					<form:errors path="image" cssClass="error"/> --%>
-<!-- 				</div> -->
+				<div class="form-group">
+					<form:label path="productImage">
+						<spring:message text="Product Image" />
+					</form:label>
+					<form:input path="productImage" id="productImage" class="form:input-large" type="file" multiple="true"/>
+					<c:if test="${not empty imageError}">
+						<div class="error">${imageError}</div>
+					</c:if>
+				</div>
 					
 				<c:choose>
 					<c:when test="${product.id > 0}">

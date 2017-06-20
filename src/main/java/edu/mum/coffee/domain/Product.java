@@ -1,20 +1,27 @@
 package edu.mum.coffee.domain;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Product {
@@ -50,8 +57,12 @@ public class Product {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date created;
 
-	// @Transient
-	// private MultipartFile image;
+	@Transient
+	private List<MultipartFile> productImage;
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "product_id")
+	private List<Image> image;
 
 	public Product() {
 		super(); // default constructor
@@ -121,20 +132,28 @@ public class Product {
 		this.manufacturer = manufacturer;
 	}
 
-	// public MultipartFile getImage() {
-	// return image;
-	// }
-	//
-	// public void setImage(MultipartFile image) {
-	// this.image = image;
-	// }
-
 	public Date getCreated() {
 		return created;
 	}
 
 	public void setCreated(Date created) {
 		this.created = created;
+	}
+	
+	public List<MultipartFile> getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(List<MultipartFile> productImage) {
+		this.productImage = productImage;
+	}
+
+	public List<Image> getImage() {
+		return image;
+	}
+
+	public void setImage(List<Image> image) {
+		this.image = image;
 	}
 
 }
