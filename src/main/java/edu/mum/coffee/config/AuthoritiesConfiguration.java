@@ -16,8 +16,8 @@ public class AuthoritiesConfiguration {
 												"/product/add",
 												"/product/list",
 												"/product/modify", 
-									    		"/person/list",
-									    		"/person/add"
+									    		"/user/list",
+									    		"/user/add"
 											};
 	public static final String[] USER_AUTHORITIES = new String[] {
 											

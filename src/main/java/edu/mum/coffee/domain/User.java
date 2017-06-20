@@ -36,6 +36,9 @@ public class User extends Person {
 		return authorities;
 	}
 
+	public String getAuthority() {
+		return authorities.iterator().next().getAuthority();
+	}
 	public void setAuthorities(Set<Authorities> authorities) {
 		this.authorities = authorities;
 	}

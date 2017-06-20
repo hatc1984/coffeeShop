@@ -47,12 +47,12 @@ public class UserService {
 		return userRepository.save(user);
 	}
 	
-	public void deleteById(int userId) {
+	public void deleteById(long userId) {
 		User user = getUser(userId);
 		delete(user);
 	}
 	
-	public User getUser(int userId) {
+	public User getUser(long userId) {
 		return  userRepository.findOne(userId);
 	}
 	
