@@ -814,24 +814,16 @@ body, h3, h1, h2, div, p {
 	height: 40px !important;
 }
 
-/* Footer*/
-/* #footer .container{ */
-/* 	background-image: url("../image/footer.jpg"); */
-/* 	height: 300px; */
-/*     width: 1200px; */
-/*     max-width: 1200px; */
-/* } */
-
 footer {
     margin-top: 30px;
     padding-top: 60px;
     clear: both;
     overflow: hidden;
-    background-color: #f9e59e;
+    background-color: #434A4F;
 }
 
 .block .block-heading {
-    color: #df574b;
+    color: white;
     font-size: 14px;
     margin: 0 0 15px;
     font-family: 'Roboto Slab',serif;
@@ -850,9 +842,9 @@ ul {
 }
 
 .block .block-content li a {
-    color: #b09769;
     font-size: 12px;
     word-wrap: break-word;
+    color: #ff8a2b;
 }
 
 .block .block-content .foot-phone div.fleft {
