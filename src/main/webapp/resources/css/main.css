@@ -879,3 +879,17 @@ ul {
 .extra-wrap {
     overflow: hidden;
 }
+
+.extra-wrap a {
+	color: #D87D32;
+}
+
+.extra-wrap a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.extra-wrap a:focus {
+	color: #D87D32;
+	text-decoration: none;
+}

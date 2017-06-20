@@ -3,7 +3,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -84,5 +83,7 @@
 				</div>
 			</div>
 		</div>
+		
+		<jsp:include page="footer.jsp"></jsp:include>	
 	</body>
 </html>

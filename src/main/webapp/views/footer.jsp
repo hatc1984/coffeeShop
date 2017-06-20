@@ -7,10 +7,10 @@
 					<div class="block-heading">Information</div>
 					<div class="block-content">
 						<ul>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=information/information&amp;information_id=4">About Us</a></li>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=information/information&amp;information_id=6">Delivery Information</a></li>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=information/information&amp;information_id=3">Privacy Policy</a></li>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=information/information&amp;information_id=5">Terms &amp; Conditions</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">About Us</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Delivery Information</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Privacy Policy</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Terms &amp; Conditions</a></li>
 						</ul>
 					</div>
 				</div>
@@ -21,9 +21,9 @@
 						Customer Service					</div>
 					<div class="block-content">
 						<ul>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=information/contact">Contact Us</a></li>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=account/return/insert">Returns</a></li>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=information/sitemap">Site Map</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Contact Us</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Returns</a></li>
+							<li><a href="//www.google.com/maps/?q=41.018,-91.9688">Site Map</a></li>
 						</ul>
 					</div>
 				</div>
@@ -34,10 +34,10 @@
 						Extras					</div>
 					<div class="block-content">
 						<ul>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=product/manufacturer">Brands</a></li>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=account/voucher">Gift Vouchers</a></li>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=affiliate/account">Affiliates</a></li>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=product/special">Specials</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Brands</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Gift Vouchers</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Affiliates</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Specials</a></li>
 						</ul>
 					</div>
 				</div>
@@ -48,10 +48,10 @@
 						My Account					</div>
 					<div class="block-content">
 						<ul>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=account/account">My Account</a></li>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=account/order">Order History</a></li>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=account/wishlist">Wish List</a></li>
-							<li><a href="https://livedemo00.template-help.com/opencart_51838/index.php?route=account/newsletter">Newsletter</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">My Account</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Order History</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Wish List</a></li>
+							<li><a href="https://www.facebook.com/trancaoha">Newsletter</a></li>
 						</ul>
 					</div>
 				</div>
@@ -80,8 +80,8 @@
 								<span class="glyphicon glyphicon-phone"></span>
 							</div>
 							<div class="extra-wrap">
-								<div>1-800-234-5677</div>
-								<div>1-800-234-5678</div>
+								<div><a href="callto:+1 (641) 472-7000">(641) 472-7000</a></div>
+								<div><a href="callto:+1 (929) 208 9377">(929) 208 9377</a></div>
 							</div>
 						</div>
 					</div>
@@ -94,7 +94,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					Powered By <a href="https://www.opencart.com">Vu Lee and Cao Ha</a> Coffee House © 2017<!-- [[%FOOTER_LINK]] -->
+					Powered By <a href="https://www.facebook.com/profile.php?id=100001675162908">Vu Lee and Cao Ha</a> Coffee House © 2017<!-- [[%FOOTER_LINK]] -->
 				</div>
 			</div>
 		</div>
