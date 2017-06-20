@@ -11,6 +11,15 @@ body, h3, h1, h2, div, p {
 
 #header ul.nav.nav-pills {
 	background-color: #434A4F;
+	height: 55px;
+}
+
+#header ul li {
+    padding-top: 5px;
+}
+
+#header .header.user-icon {
+	margin-right: 10px;
 }
 
 #header ul li a {
@@ -36,6 +45,29 @@ body, h3, h1, h2, div, p {
     width: 1.5px;
     position: relative;
     top: 3px;
+}
+
+#header .header.count span {
+    font-family: Source Sans Pro;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: white;
+    position: absolute;
+    top: -7px;
+    right: -11px;
+    min-width: 20px;
+    min-height: 20px;
+    padding: 0 4px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+#header .header.user-icon a span{
+	transform: scaleX(-1);
+	color: #ff8a2b;
+	font-size: 25px;
+    padding-top: 3px;
 }
 
 .search {
@@ -111,13 +143,6 @@ body, h3, h1, h2, div, p {
 .header.count {
 	margin-top: 10px;
     margin-right: 10px;
-}
-
-.header.count span {
-	background-color: #EBEBEB;
-    border: 1px solid rgb(245,245,245);
-    border-radius: 50%;
-    color: grey;
 }
 
 /*CSS for home page*/
