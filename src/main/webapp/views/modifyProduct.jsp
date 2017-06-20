@@ -105,16 +105,18 @@
 					<form:errors path="created" cssClass="error"/>
 				</div>
 				
-				<div class="form-group">
-					<form:label path="productImage">
-						<spring:message text="Product Image" />
-					</form:label>
-					<form:input path="productImage" id="productImage" class="form:input-large" type="file" multiple="true"/>
-					<div class="upload"> <span class="glyphicon glyphicon-picture"></span>Choose Product Image..</div>
-					<c:if test="${not empty imageError}">
-						<div class="error">${imageError}</div>
-					</c:if>
-				</div>
+				<c:if test="${product.id == 0}">				
+					<div class="form-group">
+						<form:label path="productImage">
+							<spring:message text="Product Image" />
+						</form:label>
+						<form:input path="productImage" id="productImage" class="form:input-large" type="file" multiple="true"/>
+						<div class="upload"> <span class="glyphicon glyphicon-picture"></span>Choose Product Image..</div>
+						<c:if test="${not empty imageError}">
+							<div class="error">${imageError}</div>
+						</c:if>
+					</div>
+				</c:if>
 					
 				<c:choose>
 					<c:when test="${product.id > 0}">

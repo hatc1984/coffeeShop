@@ -90,35 +90,44 @@ public class ProductController {
 	public String modifyProduct(@ModelAttribute("product") @Valid Product product, BindingResult result, Model model, 
 			HttpServletRequest request) {
 		
-		boolean noImageUpload = false;
-		if ("".equals(product.getProductImage().get(0).getOriginalFilename())) {
-			noImageUpload = true;
-		}
-		
-		if (!result.hasErrors() || !noImageUpload) {
-			List<Image> images = new ArrayList<>();
-			for (MultipartFile file : product.getProductImage()) {
-				String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-				if (file != null && !file.isEmpty()) {
-					try {
-						file.transferTo(new File(rootDirectory + "resources\\image\\" + file.getOriginalFilename()));
-						Image image = new Image();
-						image.setImageLink("..\resources\\image\\" + file.getOriginalFilename());
-						image.setImageName(file.getOriginalFilename());
-						images.add(image);
-					} catch (Exception e) {
-						throw new RuntimeException("Product Image saving failed", e);
+		if (product.getId() == 0) {
+			boolean noImageUpload = false;
+			if ("".equals(product.getProductImage().get(0).getOriginalFilename())) {
+				noImageUpload = true;
+			}
+			
+			if (!result.hasErrors() && !noImageUpload) {
+				List<Image> images = new ArrayList<>();
+				for (MultipartFile file : product.getProductImage()) {
+					String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+					if (file != null && !file.isEmpty()) {
+						try {
+							file.transferTo(new File(rootDirectory + "resources\\image\\" + file.getOriginalFilename()));
+							Image image = new Image();
+							image.setImageLink("..\resources\\image\\" + file.getOriginalFilename());
+							image.setImageName(file.getOriginalFilename());
+							images.add(image);
+						} catch (Exception e) {
+							throw new RuntimeException("Product Image saving failed", e);
+						}
 					}
 				}
+				product.setImage(images);
+				productService.save(product);
+			} else {
+				if (noImageUpload) {
+					model.addAttribute("imageError", "product Image need to upload");
+				}
+				model.addAttribute("product", product);
+				return "modifyProduct";
 			}
-			product.setImage(images);
-			productService.save(product);
 		} else {
-			if (noImageUpload) {
-				model.addAttribute("imageError", "product Image need to upload");
+			if (!result.hasErrors()) {
+				productService.save(product);
+			} else {
+				model.addAttribute("product", product);
+				return "modifyProduct";
 			}
-			model.addAttribute("product", product);
-			return "modifyProduct";
 		}
 
 		return "redirect:list";
