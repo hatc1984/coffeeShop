@@ -32,7 +32,7 @@ public class UserController {
 			userService.deleteById(id);
 			return "redirect:user/list";
 		} else if ("update".equals(action)) {
-			User user = userService.getUser(Integer.parseInt(userId));
+			User user = userService.getUser(Long.parseLong(userId));
 			model.addAttribute("user", user);
 			return "modifyUser";
 		} 
@@ -65,9 +65,9 @@ public class UserController {
 			model.addAttribute("users", page.getContent());
 			return "users";
 	}
-	
+
 	@RequestMapping(value = "modify" , method = RequestMethod.POST)
-	public String modifyUser(@ModelAttribute("user") @Valid User user,BindingResult result, Model model) {
+	public String modifyUser(@ModelAttribute("user") @Valid User user,BindingResult result, Model model) throws Throwable {
 		if (!result.hasErrors()) {
 			userService.save(user);
 		} else {
