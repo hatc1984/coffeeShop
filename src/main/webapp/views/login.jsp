@@ -1,25 +1,46 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page session="true"%>
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-	<link href="../resources/css/style_2.css" th:href="@{/css/style.css}" rel="stylesheet" />
-	<meta charset="UTF-8" />
-	<title>Login Page</title>
+<meta charset="UTF-8" />
+<title>Login Page</title>
+<jsp:include page="layout.jsp"></jsp:include>
 </head>
 <body class="main-content">
-    <div >
-    <div class="login">
-        <h3>Login to continue</h3>
-        <form th:action="@{/login}" method="POST">
-        	<input type="hidden" name="${ _csrf.parameterName}" value = "${_csrf.token}" /><br />
-            <input type="text" name="username" placeholder="Your username" /><br />
-            <input type="password" name="password" placeholder="Your password" /><br />
-            <button type="submit">Login</button> <br />
-        </form>
-        <form>
-        	<p>Do you wanna create new account?</p>
-        	<a href="/signup">SignUp</a>
-        </form>
-        </div>>
-    </div>
+	<div id="login">
+		<div class="container">
+			<h3>Login to continue</h3>
+			<form action="<c:url value='login' />" method="post">
+				<div class="form-group">
+					<label for="username">Username:</label> <input type="text"
+						class="form-control" id="username" placeholder="Enter email"
+						name="username" value="${cookie.username.value}" required>
+				</div>
+				<div class="form-group">
+					<label for="password">Password:</label> <input type="password"
+						class="form-control" id="password" placeholder="Enter password"
+						name="password" required>
+				</div>
+
+				<input name="submit" type="submit" value="Sign In"
+					class="btn btn-success" />
+				<c:if test="${not empty error}">
+					<div class="error message">${error}</div>
+				</c:if>
+				<div class="checkbox">
+					<label><input type="checkbox" name="rememberMeChk"
+						<c:if test="${not empty cookie.username.value}">checked</c:if> />Keep
+						me signed in</label>
+				</div>
+				<div class="divider-break">
+					<p>New to shop?</p>
+					<a href="signup" class="btn btn-primary">Sign Up</a>
+				</div>
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+			</form>
+		</div>
+	</div>
 </body>
 </html>

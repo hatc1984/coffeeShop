@@ -378,7 +378,7 @@ body, h3, h1, h2, div, p {
 #login {
     position: absolute;
     z-index: -1;
-    background: url("../image/city.jpg") 50% 50% / cover no-repeat fixed padding-box border-box rgb(43, 54, 67);
+    background: url("../image/coffe_login.jpg") 50% 50% / cover no-repeat fixed padding-box border-box rgb(43, 54, 67);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -391,6 +391,7 @@ body, h3, h1, h2, div, p {
     border-width: 0px;
     border-style: none;
     border-color: rgb(51, 51, 51);
+    color: white;
 }
 
 #login .btn-success {
@@ -424,8 +425,8 @@ body, h3, h1, h2, div, p {
 	width: 30%;
     margin-top: 10%;
     background-image: url("../image/bg-white-lock.png");
-    height: 370px;
     padding:20px;
+    background-size: cover;
 }
 
 #login a[href="signup"] {
