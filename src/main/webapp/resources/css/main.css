@@ -274,6 +274,30 @@ body, h3, h1, h2, div, p {
 	padding-bottom: 100px;
 }
 
+#modifyProduct #productImage {
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+}
+
+#modifyProduct .upload {
+	text-align: center;
+    display: block;
+    width: 200px;
+    background: #f6f7f9;
+    border: #f6f7f9;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+    padding: 5px;
+}
+
+#modifyProduct .glyphicon {
+    float: left;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
 #modifyProduct h3 {
 	text-align: center;
 	margin: 0px;
