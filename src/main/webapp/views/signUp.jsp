@@ -22,6 +22,9 @@
 						 			</div>
 						 			<div class="panel-body">
 						    		<form:form role="form" action="signup" method="POST" modelAttribute="user">
+						    			<c:if test="${not empty error}">
+						    				 <div class="errorSignUp">${error}</div>
+						    			</c:if>
 						    			<div class="row">
 						    				<div class="col-xs-6 col-sm-6 col-md-6">
 						    					<div class="form-group">

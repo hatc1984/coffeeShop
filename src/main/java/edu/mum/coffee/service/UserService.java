@@ -20,7 +20,13 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public User save(User user) {
+	public User save(User user) throws Exception {
+		
+		User userToCheck = userRepository.findByEmail(user.getEmail());
+		if (userToCheck != null) {
+			throw new Exception("This Email is Existing in System");
+		}
+		
 		user.setEnable(true);
 		user.setPassword(encodePassword(user.getPassword()));
 

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.mum.coffee.domain.User;
 import edu.mum.coffee.service.UserService;
@@ -61,14 +62,29 @@ public class HomeController {
 		return "404";
 	}
 
-    @RequestMapping("/login") 
-    public String getLogin() {
-        return "login";
-    }
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(@RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout, Model model) {
+
+		if (error != null) {
+			model.addAttribute("error", "Invalid UserName And PassWord");
+		}
+
+		if (logout != null) {
+			return "redirect:home";
+		}
+		return "login";
+	}
+	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String register(@ModelAttribute("user") @Validated User user, BindingResult result, Model model) {
 		if (!result.hasErrors()) {
-			userService.save(user);
+			try {
+				userService.save(user);
+			} catch (Exception e) {
+				model.addAttribute("error", e.getMessage());
+				return "signUp";
+			}
 			return "redirect:/home";
 		} else {
 			model.addAttribute("user", user);
