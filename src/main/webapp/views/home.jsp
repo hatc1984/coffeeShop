@@ -11,6 +11,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	This is home page
+	<p>This is home page</p>
+	<h1>Contructing now, not complete</h1></br></br>
+	<a href="/signup">Sign Up</a></br></br>
+	<a href="/user/list">User List Management</a></br></br>
+	<a href="/product/list">Product List Management</a></br></br>
+	
 </body>
 </html>
