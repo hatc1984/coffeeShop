@@ -28,7 +28,7 @@ public class UserController {
 	public String action(@RequestParam("action") String action, @RequestParam("userId") String userId,
 			Model model) {
 		if ("delete".equals(action)) {
-			int id = Integer.parseInt(userId);
+			Long id = Long.parseLong(userId);
 			userService.deleteById(id);
 			return "redirect:user/list";
 		} else if ("update".equals(action)) {
@@ -69,7 +69,10 @@ public class UserController {
 	@RequestMapping(value = "modify" , method = RequestMethod.POST)
 	public String modifyUser(@ModelAttribute("user") @Valid User user,BindingResult result, Model model) throws Throwable {
 		if (!result.hasErrors()) {
-			userService.save(user);
+			if (user.getId()>0)
+				userService.update(user);
+			else
+				userService.save(user);
 		} else {
 			model.addAttribute("user", user);
 			return "modifyUser"; 

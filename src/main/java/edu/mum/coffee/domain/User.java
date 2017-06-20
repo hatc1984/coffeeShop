@@ -39,6 +39,11 @@ public class User extends Person {
 	public String getAuthority() {
 		return authorities.iterator().next().getAuthority();
 	}
+	
+	public void setAuthorities(String authority) {
+		authorities.iterator().next().setAuthority(authority);
+	}
+	
 	public void setAuthorities(Set<Authorities> authorities) {
 		this.authorities = authorities;
 	}

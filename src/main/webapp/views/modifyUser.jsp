@@ -28,7 +28,7 @@
 				<c:otherwise><c:url var="userACtion" value="user/modify" /></c:otherwise>
 			</c:choose>
 
-	   		<form:form role="form" action="signup" method="POST" modelAttribute="user">
+	   		<form:form role="form" action="user/modify" method="POST" modelAttribute="user">
 				<div class="form-group">
 					<c:if test="${user.id > 0}">
 						<form:label path="id">
@@ -65,8 +65,21 @@
 	   					</div>
 	   				</div>
 	   			</div>
-	
-	   			<div class="form-group">
+				
+				
+				<div class="form-group">
+					<form:label path="authority">
+						<spring:message text="Role" /> 
+					</form:label>
+					<form:select path="authority" id="authority" class="form-control">
+						<form:option value="ROLE_USER">ROLE_USER</form:option>
+						<form:option value="ROLE_ADMIN">ROLE_ADMIN</form:option>
+					</form:select>
+					<form:errors path="authority" cssClass="errorSignUp"/>
+				</div>
+				
+
+				<div class="form-group">
 	   				<form:label path="email">
 							<spring:message text="Email" />
 					</form:label>
