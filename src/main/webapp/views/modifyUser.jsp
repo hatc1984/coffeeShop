@@ -28,7 +28,18 @@
 				<c:otherwise><c:url var="userACtion" value="user/modify" /></c:otherwise>
 			</c:choose>
 
-	   		<form:form role="form" action="user/modify" method="POST" modelAttribute="user">
+
+			<c:choose>
+				<c:when test="${user.id ==0}">
+					<c:set var="varChecked" value="/user/add"></c:set>
+				</c:when>
+
+				<c:otherwise>
+					<c:set var="varChecked" value="/user/modify"></c:set>
+				</c:otherwise>
+			</c:choose>
+
+			<form:form role="form" action="${varChecked}" method="POST" modelAttribute="user">
 				<div class="form-group">
 					<c:if test="${user.id > 0}">
 						<form:label path="id">
@@ -88,6 +99,8 @@
 	   				<form:errors path="email" cssClass="errorSignUp"/>
 	   			</div>
 	   			
+	   			
+	   			<c:if test= "${user.id==0}">
 	   			<div class="row">
 	   				<div class="col-xs-6 col-sm-6 col-md-6">
 	   					<div class="form-group">
@@ -110,6 +123,7 @@
 	   					</div>
 	   				</div>
 	   			</div>
+	   			</c:if>
 	   			
 	   			<div class="form-group">
 	   				<form:label path="phone">

@@ -47,6 +47,19 @@ public class UserService {
 		return userRepository.save(user);
 	}
 	
+	public User update(User user) throws Exception {
+		
+		user.setEnable(true);
+		//user.setPassword(encodePassword(user.getPassword()));
+		
+		User userToCheck = userRepository.findByEmail(user.getEmail());
+		user.setAuthorities(userToCheck.getAuthorities());
+		user.updateAuthorities();
+		user.setPassword(userToCheck.getPassword());
+		user.setPasswordConfirm(userToCheck.getPassword());
+		return userRepository.save(user);
+	}
+	
 	public void deleteById(long userId) {
 		User user = getUser(userId);
 		delete(user);

@@ -27,7 +27,18 @@ public class User extends Person {
 	public String getPassword() {
 		return password;
 	}
+	
+	@Transient
+	private String authority;
+	
+	public void setAuthority(String authority) {
+		this.authority = authority ;
+	}
 
+	public void updateAuthorities() {
+		this.authorities.iterator().next().setAuthority(authority);
+	}
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -37,7 +48,7 @@ public class User extends Person {
 	}
 
 	public String getAuthority() {
-		return authorities.iterator().next().getAuthority();
+		return authorities == null ? null : authorities.iterator().next() == null ? null : authorities.iterator().next().getAuthority();
 	}
 	
 	public void setAuthorities(String authority) {

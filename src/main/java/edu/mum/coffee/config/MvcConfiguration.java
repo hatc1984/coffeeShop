@@ -14,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import edu.mum.coffee.validator.UserSignUpValidator;
+import edu.mum.coffee.validator.UserUpdateValidator;
 
 @Configuration
 @EnableWebMvc
@@ -42,6 +43,11 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
 	@Bean
 	public UserSignUpValidator userSignUpValidator() {
 		return new UserSignUpValidator();
+	}
+	
+	@Bean
+	public UserUpdateValidator userUpdateValidator() {
+		return new UserUpdateValidator();
 	}
 
 	// to load message Source message_en.properties
