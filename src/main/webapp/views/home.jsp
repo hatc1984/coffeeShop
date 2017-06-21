@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Home Page</title>
+<title><spring:message code="title.HomePage"/></title>
 <jsp:include page="layout.jsp"></jsp:include>
 <link rel="stylesheet"
 	href="<c:url value="../resources/css/slideshow.css" />">
@@ -115,7 +115,7 @@
 							<div class="price">$${product.price}</div>
 							<sec:authorize access="hasRole('USER')">
 								<a class="addToCartBtn"
-									href="/buyProduct?code=${productId}"> <span
+									href="/buyProduct?code=${product.id}"> <span
 									class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
 								</a>
 							</sec:authorize>
@@ -140,7 +140,7 @@
 							<div class="price">$${product.price}</div>
 							<sec:authorize access="hasRole('USER')">
 								<a class="btn btn-danger"
-									href="/buyProduct?code=${productId}"> <span
+									href="/buyProduct?code=${product.id}"> <span
 									class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
 								</a>
 							</sec:authorize>
@@ -165,7 +165,7 @@
 							<div class="price">$${product.price}</div>
 							<sec:authorize access="hasRole('USER')">
 								<a class="btn btn-danger"
-									href="/buyProduct?code=${productId}"> <span
+									href="/buyProduct?code=${product.id}"> <span
 									class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
 								</a>
 							</sec:authorize>

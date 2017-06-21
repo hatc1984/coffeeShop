@@ -1,6 +1,5 @@
 package edu.mum.coffee.controller;
 
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,14 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import edu.mum.coffee.domain.CartInfo;
 import edu.mum.coffee.domain.Product;
-import edu.mum.coffee.domain.ProductInfo;
 import edu.mum.coffee.domain.ProductType;
 import edu.mum.coffee.domain.User;
 import edu.mum.coffee.service.ProductService;
 import edu.mum.coffee.service.UserService;
-import edu.mum.coffee.util.Utils;
 
 @Controller
 public class HomeController {

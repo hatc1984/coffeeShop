@@ -837,10 +837,8 @@ body, h3, h1, h2, div, p {
 /* CSS for Order Management*/
 #orders {
 	background-image: url("/resources/image/coffee.jpg");
-	height: 560px;
-	width: 1240px;
 	color: white;
-	padding-top: 20px;
+	background-size: cover;
 }
 
 #orders h3 {
@@ -1063,5 +1061,19 @@ ul {
 
 .fa-facebook-f:before, .fa-facebook:before {
     content: "\f09a";
+}
+
+.flag {
+	display: inline;
+}
+
+.flag img {
+	width: 36px;
+	height: 36px;
+}
+
+.header.i18n {
+	margin-right: 20px;
+	margin-top: 5px;
 }
 
