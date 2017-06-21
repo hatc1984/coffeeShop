@@ -985,6 +985,11 @@ ul {
 	text-decoration: none;
 }
 
+#productPreview{
+    display: inline-block;
+}
+
 .fa-facebook-f:before, .fa-facebook:before {
     content: "\f09a";
 }
+
