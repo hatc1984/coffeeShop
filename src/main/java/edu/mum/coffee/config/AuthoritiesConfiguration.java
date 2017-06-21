@@ -10,6 +10,7 @@ public class AuthoritiesConfiguration {
 												"/resources/image/*",
 												"/resources/js/*", 
 												"/signup*",
+												"/buyProduct*",
 												"/resources/fonts/*",
 												"/resources/font-awesome/**"
 											};
