@@ -308,6 +308,10 @@ body, h3, h1, h2, div, p {
 	color: #EF842E;
 }
 
+#home .slide-1,#home .slide-2,#home .slide-3 {
+	height: 1000px;
+}
+
 #home .content .caption {
 	font: 400 16px/24px "PT Serif",serif;
     margin-bottom: 21px;
