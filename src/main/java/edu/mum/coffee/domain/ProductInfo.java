@@ -1,5 +1,7 @@
 package edu.mum.coffee.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 
 
@@ -19,6 +21,8 @@ public class ProductInfo {
 
 	private ManuFacturerType manufacturer;
 	
+	private List<Image> image;
+	
 	private boolean newProduct=false;
 
 	public ProductInfo() {
@@ -26,7 +30,7 @@ public class ProductInfo {
 	}
 
 	public ProductInfo(int id, String productName, String description, double price, ProductType productType,
-			int quantity, ManuFacturerType manufacturer) {
+			int quantity, ManuFacturerType manufacturer, List<Image> image) {
 		this.id = id;
 		this.productName = productName;
 		this.description = description;
@@ -34,6 +38,7 @@ public class ProductInfo {
 		this.productType = productType;
 		this.quantity = quantity;
 		this.manufacturer = manufacturer;
+		this.image =  image;
 	}
 	
     public ProductInfo(Product product) {
@@ -44,6 +49,7 @@ public class ProductInfo {
 		this.productType = product.getProductType();
 		this.quantity = product.getQuantity();
 		this.manufacturer = product.getManufacturer();
+		this.image =  product.getImage();
     }
 
 	public ProductType getProductType() {
@@ -109,4 +115,11 @@ public class ProductInfo {
     public void setNewProduct(boolean newProduct) {
         this.newProduct = newProduct;
     }
+	public List<Image> getImage() {
+		return image;
+	}
+
+	public void setImage(List<Image> image) {
+		this.image = image;
+	}
 }
