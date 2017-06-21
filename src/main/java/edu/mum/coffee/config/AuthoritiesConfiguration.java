@@ -11,7 +11,7 @@ public class AuthoritiesConfiguration {
 												"/resources/js/*", 
 												"/signup*",
 												"/resources/fonts/*",
-												"/resources/font-awesome/*"
+												"/resources/font-awesome/**"
 											};
 	public static final String[] ADMIN_AUTHORITIES = new String[] {
 												"/product/action**",
@@ -22,6 +22,5 @@ public class AuthoritiesConfiguration {
 									    		"/user/add"
 											};
 	public static final String[] USER_AUTHORITIES = new String[] {
-											
 											};
 }
