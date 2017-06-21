@@ -206,6 +206,31 @@ body, h3, h1, h2, div, p {
     height: 200px;
 }
 
+.logo ul {
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.social-icon {
+    display: inline-block !important;
+    margin-right: 30px;
+    color: #b0b0b0;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.social-icon a {
+	color: #b0b0b0;
+}
+
+.social-icon a:hover, .social-icon a:focus {
+	color: #EF842E;
+}
+
+.social-icon:hover,.social-icon:focus {
+	color: #EF842E;
+}
+
 #home .content .caption {
 	font: 400 16px/24px "PT Serif",serif;
     margin-bottom: 21px;
@@ -958,4 +983,8 @@ ul {
 .extra-wrap a:focus {
 	color: #D87D32;
 	text-decoration: none;
+}
+
+.fa-facebook-f:before, .fa-facebook:before {
+    content: "\f09a";
 }

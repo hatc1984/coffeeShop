@@ -1,7 +1,5 @@
 package edu.mum.coffee.controller;
 
-import java.security.Principal;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 

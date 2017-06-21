@@ -19,6 +19,13 @@
 		<div style="height: 90px; display: inline-block;">
 			<div class="logo">
 				<img alt="logo" src="../resources/image/logo.png">
+				<ul>
+					<li class="social-icon"><a href="https://www.facebook.com/profile.php?id=100001675162908"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li class="social-icon"><a href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li class="social-icon"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+					<li class="social-icon"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					<li class="social-icon"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="pull-right">

@@ -10,7 +10,8 @@ public class AuthoritiesConfiguration {
 												"/resources/image/*",
 												"/resources/js/*", 
 												"/signup*",
-												"/resources/fonts/*"
+												"/resources/fonts/*",
+												"/resources/font-awesome/*"
 											};
 	public static final String[] ADMIN_AUTHORITIES = new String[] {
 												"/product/action**",

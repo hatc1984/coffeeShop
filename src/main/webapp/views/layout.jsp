@@ -12,5 +12,7 @@
 		<script src="<c:url value="../resources/js/bootstrap.js" />"></script>
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
 		<link rel="icon" href="../resources/image/icon.png" />
+		
+		<link rel="stylesheet" href="../resources/font-awesome/css/font-awesome.min.css">
 	</head>
 </html>
