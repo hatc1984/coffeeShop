@@ -1,7 +1,10 @@
 package edu.mum.coffee.controller;
 
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -22,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import edu.mum.coffee.domain.CartInfo;
 import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.domain.ProductInfo;
+import edu.mum.coffee.domain.ProductType;
 import edu.mum.coffee.domain.User;
 import edu.mum.coffee.service.ProductService;
 import edu.mum.coffee.service.UserService;
@@ -38,9 +42,11 @@ public class HomeController {
 	
 	@GetMapping({"/", "/index", "/home"})
 	public String homePage(Model model, HttpServletRequest request) {
-		List<Product> products =  productService.getAllProduct();
-		model.addAttribute("products", products);
-		
+		List<Product> products = productService.getAllProduct();
+		Map<ProductType,List<Product>> result = classifyProduct(products);
+		model.addAttribute("breakfastProducts", result.get(ProductType.BREAKFAST));
+		model.addAttribute("lunchProducts", result.get(ProductType.LUNCH));
+		model.addAttribute("dinnerProducts", result.get(ProductType.DINNER));
 		return "home";
 	}
 	
@@ -144,5 +150,25 @@ public class HomeController {
 			model.addAttribute("user", user);
 			return "signUp";
 		}
+	}
+	
+	private Map<ProductType,List<Product>> classifyProduct(List<Product> products) {
+		List<Product> productsBF = new ArrayList<>();
+		List<Product> productsLunch = new ArrayList<>();
+		List<Product> productsDinner = new ArrayList<>();
+		for (Product product : products) {
+			if (product.getProductType() == ProductType.BREAKFAST) {
+				productsBF.add(product);
+			} else if (product.getProductType() == ProductType.LUNCH) {
+				productsLunch.add(product);
+			} else {
+				productsDinner.add(product);
+			}
+		}
+		Map<ProductType, List<Product>> result = new HashMap<>();
+		result.put(ProductType.BREAKFAST, productsBF);
+		result.put(ProductType.LUNCH, productsLunch);
+		result.put(ProductType.DINNER, productsDinner);
+		return result;
 	}
 }

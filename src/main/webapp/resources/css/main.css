@@ -186,10 +186,16 @@ body, h3, h1, h2, div, p {
 }
 
 #home h3 {
-    font-size: 20px;
-    line-height: 36px;
-    font-weight: 600;
-    color: #000;
+   	font-size: 34px;
+    font-weight: 500;
+    color: #61646b;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    font-family: "Roboto",sans-serif;
+    font-style: normal;
+    line-height: 1.2;
+    text-rendering: optimizeLegibility;
     border-bottom: 1px solid #dadada;
     margin: 0px;
     padding-top: 10px;
@@ -197,13 +203,84 @@ body, h3, h1, h2, div, p {
     padding-left: 15px;
 }
 
+#home .name {
+	color: #999;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+#home .description {
+    font-family: "Lobster",cursive;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    color: #2f2f2f;
+    text-rendering: optimizelegibility;
+    margin-top: 7px;
+}
+
+#home .description:hover {
+	color: #FF8A2B;
+}
+
+#home .price {
+    font-family: "Lobster",cursive;
+    color: #61646b;
+    font-size: 27px;
+    margin-bottom: 27px;
+}
+
+#home .price:hover {
+	color: #FF8A2B;
+}
+
 #home .content {
-	margin-top: 20px;
+	margin-top: 45px;
+}
+
+#home .content h1 {
+    text-align: center;
+    height: 100px;
+    background: rgb(245,245,245);
+    margin: 0px;
+    padding-top: 25px;
 }
 
 #home .content img {
-	width: 200px;
-    height: 200px;
+	width: 250px;
+    height: 250px;
+}
+
+#home .glyphicon.glyphicon-shopping-cart {
+    transform: scaleX(-1);
+}
+
+#home .addToCartBtn {
+	background: #fff;
+    border: 2px solid #d4d5d5;
+    font-size: 18px;
+    line-height: 22px;
+    color: #4e4e4e;
+    padding: 10px 20px;
+        text-shadow: none;
+    box-shadow: none;
+    text-align: center;
+    font-weight: 700;
+    font-style: italic;
+    position: relative;
+    overflow: hidden;
+    font-family: "Lobster",cursive;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+#home .addToCartBtn:hover, #home .addToCartBtn:focus {
+	text-decoration: none;
+	background-color: #FF8A2B;
+	color: white;
+	border: none;
 }
 
 .logo ul {
@@ -244,11 +321,6 @@ body, h3, h1, h2, div, p {
 	text-align: center;
 	width: 24%;
 	display: inline-block;
-}
-
-#home .price {
-	color: red;
-	font-weight: 700px;
 }
 
 /*CSS products Page*/
@@ -983,10 +1055,6 @@ ul {
 .extra-wrap a:focus {
 	color: #D87D32;
 	text-decoration: none;
-}
-
-#productPreview{
-    display: inline-block;
 }
 
 .fa-facebook-f:before, .fa-facebook:before {
