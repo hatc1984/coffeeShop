@@ -11,8 +11,9 @@
 <jsp:include page="layout.jsp"></jsp:include>
 <script type="text/javascript" src="/resources/js/product.js"></script>
 </head>
-<body>
-	<div id="products">
+<body id="products">
+	<jsp:include page="header.jsp"></jsp:include>
+	<div>
 		<h3>Product Management</h3>
 		<sec:authorize access="hasRole('ADMIN')">
 			<a href="/product/add" id="addLnk" class="btn btn-primary pull-right"><strong>+</strong>

@@ -13,8 +13,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import edu.mum.coffee.domain.Address;
 import edu.mum.coffee.domain.Authorities;
-import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.domain.User;
 import edu.mum.coffee.repository.UserRepository;
 
@@ -47,12 +47,39 @@ public class UserService {
 		return userRepository.save(user);
 	}
 	
+	public User adminSaveUser(User user) throws Exception {
+		if (!user.getPassword().equals(user.getPasswordConfirm())) {
+			throw new Exception("Password and confirm Password not match");
+		}
+		
+		User userToCheck = userRepository.findByEmail(user.getEmail());
+		if (userToCheck != null) {
+			throw new Exception("This Email is Existing in System");
+		}
+		user.setEnable(true);
+		user.setPassword(encodePassword(user.getPassword()));
+
+		Set<Authorities> authorities = new HashSet<>();
+		Authorities authority = new Authorities();
+		authority.setAuthority(user.getAuthority());
+		authority.setUser(user);
+		authorities.add(authority);
+		user.setAuthorities(authorities);
+		
+		return userRepository.save(user);
+	}
+	
 	public User update(User user) throws Exception {
 		
 		user.setEnable(true);
-		//user.setPassword(encodePassword(user.getPassword()));
 		
 		User userToCheck = userRepository.findByEmail(user.getEmail());
+		Address address = userToCheck.getAddress();
+		address.setCity(user.getAddress().getCity());
+		address.setCountry(user.getAddress().getCountry());
+		address.setState(user.getAddress().getState());
+		address.setZipcode(user.getAddress().getZipcode());
+		user.setAddress(address);
 		user.setAuthorities(userToCheck.getAuthorities());
 		user.updateAuthorities();
 		user.setPassword(userToCheck.getPassword());
@@ -73,19 +100,11 @@ public class UserService {
 		userRepository.delete(user);
 	}
 	
-	public User findUser(String username) {
-		return userRepository.findOne(username);
-	}
-	
 	public List<User> findByTextSearch(String criteria) {
 		if (!criteria.contains("%")) {
 			criteria = "%"+criteria+"%";
 		}
 		return userRepository.findByFirstNameLikeOrLastNameLikeAllIgnoreCase(criteria, criteria);
-	}
-	
-	public List<User> findByUserRole(Authorities authorities) {
-		 return userRepository.findByAuthorities(authorities);
 	}
 	
 	public Page<User> findUserPagination(Integer pageNumber) {
@@ -107,5 +126,9 @@ public class UserService {
 			return null;
 		}
 		return userFindOne;
+	}
+
+	public User findUserByEmail(String username) {
+		return userRepository.findByEmail(username);
 	}
 }

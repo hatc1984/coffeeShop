@@ -9,6 +9,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -25,6 +26,7 @@ public class Person {
 	private String lastName;
 	
 	@NotEmpty(message = "Email not empty")
+	@Email
 	private String email;
 	
 	@OneToOne(cascade = CascadeType.ALL)
@@ -39,14 +41,10 @@ public class Person {
 	public long getId() {
 		return id;
 	}
-	
-	
 
 	public void setId(long id) {
 		this.id = id;
 	}
-
-
 
 	public boolean isEnable() {
 		return enable;

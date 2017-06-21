@@ -252,10 +252,7 @@ body, h3, h1, h2, div, p {
 
 #products {
 	background-image: url("/resources/image/home.jpg");
-	height: 600px;
-	width: 1240px;
 	color: white;
-	padding-top: 20px;
 	background-size: cover;
 }
 
@@ -363,6 +360,56 @@ body, h3, h1, h2, div, p {
 	margin-left: 10px;
 }
 
+/*CSS for users Page*/
+
+#users {
+	background-image: url("/resources/image/personManager.jpg");
+	width: 100%;
+	color: white;
+	background-size: cover;
+}
+
+#users .productNotExist {
+  	position: absolute;
+    left: 35%;
+    top: 45%;
+    color: cornsilk;
+}
+
+#users .productNotExistAddBtn {
+	margin-right: 10%;
+    float: right;
+    position: absolute;
+    left: 46%;
+    top: 60%;
+}
+
+#users h3 {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#users table {
+    width: 80% !important;
+    margin: auto !important;
+    margin-top: 50px !important;
+    background-image: url("/resources/image/bg-white-lock.png");
+}
+
+#users table #action {
+	padding-left: 100px;
+}
+
+#users #addLnk {
+	margin-right: 10%;
+	float: right	
+}
+
+#users .pagination {
+    margin-left: 10%;
+    display: block;
+}
+
 /*CSS for persons Page*/
 #persons {
 	background-image: url("/resources/image/personManager.jpg");
@@ -412,6 +459,25 @@ body, h3, h1, h2, div, p {
 #persons .pagination {
     margin-left: 10%;
     display: block;
+}
+
+/*modifyUser*/
+#modifyUser {
+	width: 100%;
+	background-repeat: no-repeat;
+}
+
+#modifyUser h3 {
+	text-align: center;
+	margin: 0px;
+	padding-top: 20px;
+}
+
+#modifyUser form {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 10px;
+    margin-top: 15px;
 }
 
 /*CSS Modify Person*/

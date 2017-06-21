@@ -11,8 +11,9 @@
 <jsp:include page="layout.jsp"></jsp:include>
 <script type="text/javascript" src="/resources/js/user.js"></script>
 </head>
-<body>
-	<div id="users">
+<body id="users">
+	<jsp:include page="header.jsp"></jsp:include>
+	<div>
 		<h3>User Management</h3>
 		<sec:authorize access="hasRole('ADMIN')">
 			<a href="/user/add" id="addLnk" class="btn btn-primary pull-right"><strong>+</strong>
@@ -32,7 +33,7 @@
 							<th>Email</th>
 							<th>Role</th>
 							<sec:authorize access="hasRole('ADMIN')">
-								<th colspan="2" id="action">Action</th>
+								<th colspan="2" id="action" style="text-align: center;">Action</th>
 							</sec:authorize>
 						</tr>
 					</thead>
@@ -43,7 +44,7 @@
 								<td>${user.firstName}</td>
 								<td>${user.lastName}</td>
 								<td>${user.email}</td>
-								<td>${user.getAuthority()}</td>
+								<td>${user.getAuthorityToShowList()}</td>
 								<sec:authorize access="hasRole('ADMIN')">
 									<td class="action"><a
 										href="/user?action=update&userId=${user.id}"

@@ -88,5 +88,29 @@ public class Order {
 		}
 		orderLines.clear();
 	}
+	
+	private Orderline checkProductExistInAnyOrderLine(Product product) {
+		for(Orderline orderLine : this.getOrderLines()) {
+			if (orderLine.getProduct().getId() == product.getId()) {
+				return orderLine;
+			}
+		}
+		return null;
+	}
+	
+	public void createOrderLine(List<Product> productsAtCart) {
+		for(Product product: productsAtCart) {
+			Orderline orderLineContainProduct = checkProductExistInAnyOrderLine(product);
+			if (orderLineContainProduct != null) {
+				orderLineContainProduct.setQuantity(orderLineContainProduct.getQuantity() + 1);
+			} else {
+				Orderline orderline = new Orderline();
+				orderline.setProduct(product);
+				orderline.setOrder(this);
+				orderline.setQuantity(1);
+				this.addOrderLine(orderline);
+			}
+		}
+	}
 
 }

@@ -15,7 +15,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class User extends Person {
 	
 	@NotNull
-	@NotEmpty
+	@NotEmpty(message = "Password not empty")
 	private String password;
 	
 	@Transient
@@ -48,6 +48,10 @@ public class User extends Person {
 	}
 
 	public String getAuthority() {
+		return authority;
+	}
+	
+	public String getAuthorityToShowList() {
 		return authorities == null ? null : authorities.iterator().next() == null ? null : authorities.iterator().next().getAuthority();
 	}
 	

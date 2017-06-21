@@ -24,7 +24,7 @@
 					<c:otherwise>
 						<li class="header"><a href="/logout">Logout</a></li>
 						<sec:authorize access="hasRole('USER')">
-							<li class="header user-icon"><a href="person/changeInformation?username=${pageContext.request.userPrincipal.name}"><img src="../resources/image/user.png"/></a></li>
+							<li class="header user-icon"><a href="user?action=update&username=${pageContext.request.userPrincipal.name}"><img src="../resources/image/user.png"/></a></li>
 							<li class="header count"><span>${sessionScope['cart'].size == null ? 0 : sessionScope['cart'].size}</span></li>
 							<li class="header user-icon"><a href="/order"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 						</sec:authorize>
