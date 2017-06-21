@@ -70,57 +70,6 @@ public class HomeController {
 		return "signUp";
 	}
 	
-   @RequestMapping({ "/buyProduct" })
-   public String listProductHandler(HttpServletRequest request, Model model, 
-		   @RequestParam(value = "code") int code) {
- 
-       Product product = null;
-       if (code>0) {
-           product = productService.getProduct(code);
-       }
-       if (product != null) {
-           CartInfo cartInfo = Utils.getCartInSession(request);
- 
-           ProductInfo productInfo = new ProductInfo(product);
- 
-           cartInfo.addProduct(productInfo, 1);
-       }
-    
-       return "redirect:/shoppingCart";
-   }
-  
-   // POST: Update number for product
-   @RequestMapping(value = { "/shoppingCart" }, method = RequestMethod.POST)
-   public String shoppingCartUpdateQty(HttpServletRequest request, //
-           Model model, //
-           @ModelAttribute("cartForm") CartInfo cartForm) {
- 
-       CartInfo cartInfo = Utils.getCartInSession(request);
-       cartInfo.updateQuantity(cartForm);
- 
-     
-       // go to page all bought product
-       return "redirect:/shoppingCart";
-   }
- 
-   // GET: Display cart.
-   @RequestMapping(value = { "/shoppingCart" }, method = RequestMethod.GET)
-   public String shoppingCartHandler(HttpServletRequest request, Model model) {
-       CartInfo myCart = Utils.getCartInSession(request);
- 
-       model.addAttribute("cartForm", myCart);
-       return "shoppingCart";
-   }
-	
-	@RequestMapping(value = "/403", method = RequestMethod.GET)
-	public String accesssDenied(Principal user) {
-		return "403";
-	}
-	
-	@RequestMapping(value = "*")
-	public String notFoundError(HttpServletRequest request) {
-		return "404";
-	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(@RequestParam(value = "error", required = false) String error,
