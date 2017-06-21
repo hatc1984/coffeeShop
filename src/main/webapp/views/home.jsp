@@ -91,6 +91,20 @@
 			</div>
 		</div>
 		
+		<c:forEach items="${products}" var="prodInfo">
+	       <div id="productPreview" style = "display:inline-block">
+	        <ul>
+				<li><img class="product-image" src="${prodInfo.getImage().get(0).getImageLink()}" height="60"/></li>
+				<li>Type: ${prodInfo.productType}</li>
+				<li>Name: ${prodInfo.productName}</li>
+				<li>Price:${prodInfo.price}</li>
+				<li><a href="${pageContext.request.contextPath}/buyProduct?code=${prodInfo.id}">Buy Now</a></li>
+			</ul>
+	       </div>
+	 
+	   </c:forEach>
+	   <br/>
+		
 		<jsp:include page="footer.jsp"></jsp:include>	
 	</body>
 </html>

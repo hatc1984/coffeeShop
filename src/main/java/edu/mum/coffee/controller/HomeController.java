@@ -1,6 +1,7 @@
 package edu.mum.coffee.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -18,8 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import edu.mum.coffee.domain.CartInfo;
+import edu.mum.coffee.domain.Product;
+import edu.mum.coffee.domain.ProductInfo;
 import edu.mum.coffee.domain.User;
+import edu.mum.coffee.service.ProductService;
 import edu.mum.coffee.service.UserService;
+import edu.mum.coffee.util.Utils;
 
 @Controller
 public class HomeController {
@@ -27,8 +33,14 @@ public class HomeController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private ProductService productService;
+	
 	@GetMapping({"/", "/index", "/home"})
-	public String homePage() {
+	public String homePage(Model model, HttpServletRequest request) {
+		List<Product> products =  productService.getAllProduct();
+		model.addAttribute("products", products);
+		
 		return "home";
 	}
 	
@@ -51,6 +63,48 @@ public class HomeController {
 		model.addAttribute("user", new User());
 		return "signUp";
 	}
+	
+   @RequestMapping({ "/buyProduct" })
+   public String listProductHandler(HttpServletRequest request, Model model, 
+		   @RequestParam(value = "code") int code) {
+ 
+       Product product = null;
+       if (code>0) {
+           product = productService.getProduct(code);
+       }
+       if (product != null) {
+           CartInfo cartInfo = Utils.getCartInSession(request);
+ 
+           ProductInfo productInfo = new ProductInfo(product);
+ 
+           cartInfo.addProduct(productInfo, 1);
+       }
+    
+       return "redirect:/shoppingCart";
+   }
+  
+   // POST: Update number for product
+   @RequestMapping(value = { "/shoppingCart" }, method = RequestMethod.POST)
+   public String shoppingCartUpdateQty(HttpServletRequest request, //
+           Model model, //
+           @ModelAttribute("cartForm") CartInfo cartForm) {
+ 
+       CartInfo cartInfo = Utils.getCartInSession(request);
+       cartInfo.updateQuantity(cartForm);
+ 
+     
+       // go to page all bought product
+       return "redirect:/shoppingCart";
+   }
+ 
+   // GET: Display cart.
+   @RequestMapping(value = { "/shoppingCart" }, method = RequestMethod.GET)
+   public String shoppingCartHandler(HttpServletRequest request, Model model) {
+       CartInfo myCart = Utils.getCartInSession(request);
+ 
+       model.addAttribute("cartForm", myCart);
+       return "shoppingCart";
+   }
 	
 	@RequestMapping(value = "/403", method = RequestMethod.GET)
 	public String accesssDenied(Principal user) {
