@@ -102,9 +102,9 @@ public class ProductController {
 					String rootDirectory = request.getSession().getServletContext().getRealPath("/");
 					if (file != null && !file.isEmpty()) {
 						try {
-							file.transferTo(new File(rootDirectory + "resources\\image\\" + file.getOriginalFilename()));
+							file.transferTo(new File(rootDirectory + "resources//image//" + file.getOriginalFilename()));
 							Image image = new Image();
-							image.setImageLink("..\resources\\image\\" + file.getOriginalFilename());
+							image.setImageLink("resources/image/" + file.getOriginalFilename());
 							image.setImageName(file.getOriginalFilename());
 							images.add(image);
 						} catch (Exception e) {
