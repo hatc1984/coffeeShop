@@ -394,7 +394,6 @@ body, h3, h1, h2, div, p {
 }
 
 #products .btn-primary {
-	margin-top: 10px;
 	margin-right: 10%;
 }
 
@@ -508,6 +507,12 @@ body, h3, h1, h2, div, p {
 #users .pagination {
 	margin-left: 10%;
 	display: block;
+}
+
+#users .modal-dialog {
+	left: 0% !important;
+	color: black;
+	width: 350px;
 }
 
 /*CSS for persons Page*/
