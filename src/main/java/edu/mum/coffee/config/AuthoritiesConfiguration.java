@@ -13,7 +13,8 @@ public class AuthoritiesConfiguration {
 												"/buyProduct*",
 												"/resources/fonts/*",
 												"/resources/font-awesome/**",
-												"/detailProduct*"
+												"/detailProduct*",
+												"/productAll*"
 											};
 	public static final String[] ADMIN_AUTHORITIES = new String[] {
 												"/product/action**",
