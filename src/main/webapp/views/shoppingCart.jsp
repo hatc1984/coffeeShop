@@ -1,82 +1,146 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Shopping Cart Page</title>
-	<jsp:include page="layout.jsp"></jsp:include>
-	<link rel="stylesheet"
-		href="<c:url value="../resources/css/slideshow.css" />">
-		<link rel="stylesheet" href="<c:url value="../resources/css/bootstrap.css" />">
+<meta charset="UTF-8">
+<title>Shopping Cart Page</title>
+<jsp:include page="layout.jsp"></jsp:include>
+<link rel="stylesheet"
+	href="<c:url value="../resources/css/slideshow.css" />">
+<link rel="stylesheet"
+	href="<c:url value="../resources/css/bootstrap.css" />">
 </head>
-<body>
-  	<jsp:include page="header.jsp"></jsp:include>
+<body id="shoppingCart">
+	<jsp:include page="header.jsp"></jsp:include>
 
-	<div style="height: 90px; display: inline-block;">
-		<div class="logo">
-			<img alt="logo" src="../resources/image/logo.png">
-		</div>
-	</div>
-	
 	<c:if test="${empty cartForm or empty cartForm.cartLines}">
-       <h2>There is no items in Cart</h2>
-       <a href="${pageContext.request.contextPath}/productList">Show
-           Product List</a>
-   </c:if>
- 
-   <c:if test="${not empty cartForm and not empty cartForm.cartLines   }">
-       <form:form method="POST" modelAttribute="cartForm"
-           action="${pageContext.request.contextPath}/shoppingCart">
- 
-           <c:forEach items="${cartForm.cartLines}" var="cartLineInfo"
-               varStatus="varStatus">
-               <div class="product-preview-container">
-                   <ul>
-                   		<c:forEach items="${cartLineInfo.productInfo.getImage()}" var="image">
-                   			<li style="display: inline-block"><img class="product-image" src="${image.getImageLink()}" height="60"/></li>
-						</c:forEach>
-                       <li>Code: ${cartLineInfo.productInfo.getId()} <form:hidden
-                               path="cartLines[${varStatus.index}].productInfo.id" />
- 
-                       </li>
-                       <li>Name: ${cartLineInfo.productInfo.getProductName()}</li>
-                       <li>Price: <span class="price">
-                         <fmt:formatNumber value="${cartLineInfo.productInfo.getPrice()}" type="currency"/>
-                        
-                       </span></li>
-                       <li>Quantity: <form:input
-                               path="cartLines[${varStatus.index}].quantity" /></li>
-                       <li>Subtotal:
-                         <span class="subtotal">
-                         <fmt:formatNumber value="${cartLineInfo.amount}" type="currency"/>
-                         </span>
-                       </li>
-                       <li><a
-                           href="${pageContext.request.contextPath}/shoppingCartRemoveProduct?code=${cartLineInfo.productInfo.getId()}">
-                               Delete </a></li>
-                   </ul>
-               </div>
-           </c:forEach>
-           <div style="clear: both"></div>
-           <input class="button-update-sc" type="submit" value="Update Quantity" />
-               
-           <a class="addToCartBtn"
-				href="${pageContext.request.contextPath}/home"> <span
-				class="glyphicon glyphicon-shopping-cart"></span> Continue Buy</a>
-				
-			<a class="btn btn-danger"
-				href="${pageContext.request.contextPath}/checkout"> <span
-				class="glyphicon glyphicon-shopping-cart"></span> Process to checkout</a>
-               
-       </form:form>
- 
- 
-   </c:if>
+		<h2>There is no items in Cart</h2>
+		<div class="form-group back">
+			<a href="/home" class="backToHome"><span><i
+					class="fa fa-reply"></i>Back to: Home</span></a>
+		</div>
+	</c:if>
 
-   <jsp:include page="footer.jsp" />
+	<c:if test="${not empty cartForm and not empty cartForm.cartLines}">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-10 col-md-offset-1">
+					<form:form method="POST" modelAttribute="cartForm"
+						action="${pageContext.request.contextPath}/shoppingCart">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Product</th>
+									<th>Quantity</th>
+									<th class="text-center">Price</th>
+									<th class="text-center">Total</th>
+									<th> </th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${cartForm.cartLines}" var="cartLineInfo"
+									varStatus="varStatus">
+									<tr>
+										<td class="col-sm-8 col-md-6">
+											<div class="media">
+												<a class="thumbnail pull-left" href="#"> <img
+													class="media-object"
+													src="${cartLineInfo.productInfo.getImage().get(0).getImageLink()}"
+													style="width: 72px; height: 72px;">
+												</a>
+												<form:hidden
+													path="cartLines[${varStatus.index}].productInfo.id" />
+													
+													<div class="media-body">
+													<h4 class="media-heading">
+														<a href="#">${cartLineInfo.productInfo.getProductName()}</a>
+													</h4>
+													<h5 class="media-heading">
+														by <a href="#">${cartLineInfo.productInfo.productType}</a>
+													</h5>
+													<c:choose>
+														<c:when test="${cartLineInfo.productInfo.quantity > 0}">
+															<span>Status: </span>
+															<span class="text-success"><strong>In
+																	Stock</strong></span>
+														</c:when>
+														<c:otherwise>
+															<span>Status: </span>
+															<span class="text-success"><strong>Out of
+																	Stock</strong></span>
+														</c:otherwise>
+													</c:choose>
+												</div>
+											</div>
+										</td>
+										<td class="col-sm-1 col-md-1" style="text-align: center">
+											<form:input class="form-control"
+												path="cartLines[${varStatus.index}].quantity" />
+										<td class="col-sm-1 col-md-1 text-center"><strong><fmt:formatNumber value="${cartLineInfo.productInfo.getPrice()}" type="currency"></fmt:formatNumber></strong></td>
+										<td class="col-sm-1 col-md-1 text-center"><strong><fmt:formatNumber value="${cartLineInfo.amount}" type="currency"></fmt:formatNumber></strong></td>
+										<td class="col-sm-1 col-md-1">
+											<a type="button" class="btn btn-danger" href="${pageContext.request.contextPath}/shoppingCartRemoveProduct?code=${cartLineInfo.productInfo.getId()}">
+												<span class="glyphicon glyphicon-remove"></span> Remove
+											</a>
+										</td>
+									</tr>
+								</c:forEach>
+								<tr>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td><h5>Subtotal</h5></td>
+									<td class="text-right"><h5>
+											<strong>$${cartForm.calculateMoney()}</strong>
+										</h5></td>
+								</tr>
+								<tr>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td><h5>Tax + Free Shipping</h5></td>
+									<td class="text-right"><h5>
+											<strong>$${cartForm.calculateTax()}</strong>
+										</h5></td>
+								</tr>
+								<tr>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td><h3>Total</h3></td>
+									<td class="text-right"><h3>
+											<strong>$${cartForm.calculateMoney() + cartForm.calculateTax()}</strong>
+										</h3></td>
+								</tr>
+								<tr>
+									<td> </td>
+									<td> </td>
+									<td><input class="btn btn-info" type="submit" value="Update Quantity"/></td>
+									<td>
+										<a type="button" class="btn btn-default" href="/home">
+											<span class="glyphicon glyphicon-shopping-cart"></span>
+											Continue Shopping
+										</a>
+									</td>
+									<td>
+										<a type="button" class="btn btn-success" href="${pageContext.request.contextPath}/checkout">
+											Checkout <span class="glyphicon glyphicon-play"></span>
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</form:form>
+				</div>
+			</div>
+		</div>
+
+	</c:if>
+
+	<jsp:include page="footer.jsp" />
 
 </body>
 </html>

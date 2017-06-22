@@ -101,23 +101,17 @@ public class CartController {
    @RequestMapping(value = { "/shoppingCart" }, method = RequestMethod.GET)
    public String shoppingCartHandler(HttpServletRequest request, Model model) {
        CartInfo myCart = Utils.getCartInSession(request);
- 
+       
        model.addAttribute("cartForm", myCart);
        return "shoppingCart";
    }
    
    
-   // GET: Nhập thông tin khách hàng.
    @RequestMapping(value = { "/checkout" }, method = RequestMethod.GET)
    public String shoppingCartCustomerForm(HttpServletRequest request, Model model) {
- 
        CartInfo cartInfo = Utils.getCartInSession(request);
-    
-     
-       // Chưa mua mặt hàng nào.
        if (cartInfo.isEmpty()) {
 
-           // Chuyển tới trang danh giỏ hàng
            return "redirect:/shoppingCart";
        }
  
@@ -125,7 +119,6 @@ public class CartController {
        if (customerInfo == null) {
            customerInfo = new User();
        }
- 
        model.addAttribute("checkoutForm", customerInfo);
        
        CartInfo myCart = Utils.getCartInSession(request);

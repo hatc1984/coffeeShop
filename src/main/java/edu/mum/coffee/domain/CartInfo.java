@@ -117,5 +117,17 @@ public class CartInfo {
         }
  
     }
+    
+    public double calculateMoney() {
+    	double total = 0.0;
+    	for(CartLineInfo cartLineInfo : cartLines) {
+    		total += cartLineInfo.getAmount() * cartLineInfo.getQuantity();
+    	}
+    	return total;
+    }
+    
+    public double calculateTax() {
+    	return calculateMoney() * 5 / 100;
+    }
  
 }
