@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,13 +44,6 @@ public class ProductService   {
 		return  productRepository.findAll() ;
 	}
 	
-	public List<Product> findByTextSearch(String criteria) {
-		if (!criteria.contains("%")) {
-			criteria = "%"+criteria+"%";
-		}
-		return productRepository.findByProductNameLikeOrDescriptionLikeAllIgnoreCase(criteria, criteria);
-	}
-
 	public List<Product> findByPrice(double minPrice, double maxPrice) {
 		return  productRepository.findByPriceBetween(minPrice, maxPrice);
 	}
@@ -63,5 +57,18 @@ public class ProductService   {
             new PageRequest(pageNumber - 1, PAGE_SIZE, Sort.Direction.DESC, "price");
         return productRepository.findAll(request);
     }
+	
+	public Page<Product> findProductPaginationWithType(Integer pageNumber, ProductType productType) {
+		Pageable request =
+            new PageRequest(pageNumber - 1, PAGE_SIZE, Sort.Direction.DESC, "price");
+        return productRepository.findByProductType(request, productType);
+    }
+	
+	public List<Product> findByTextSearch(String criteria) {
+		if (!criteria.contains("%")) {
+			criteria = "%"+criteria+"%";
+		}
+		return productRepository.findByProductNameLikeOrDescriptionLikeAllIgnoreCase(criteria, criteria);
+	}
 	
 }

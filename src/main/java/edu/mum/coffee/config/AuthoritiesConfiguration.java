@@ -24,5 +24,6 @@ public class AuthoritiesConfiguration {
 									    		"/user/add"
 											};
 	public static final String[] USER_AUTHORITIES = new String[] {
+												
 											};
 }

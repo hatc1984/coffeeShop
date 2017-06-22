@@ -68,7 +68,7 @@
 							<h1>VietNamese Coffee</h1>
 							<h3>Get start your purchase</h3>
 						</hgroup>
-						<button class="btn btn-hero btn-lg" role="button">See all
+						<button class="btn btn-hero btn-lg" role="button" onclick="location.href='/productAll';" >See all
 							product</button>
 					</div>
 				</div>
@@ -79,7 +79,7 @@
 							<h1>The Best Coffee In The World</h1>
 							<h3>Get start your purchase</h3>
 						</hgroup>
-						<button class="btn btn-hero btn-lg" role="button">See all
+						<button class="btn btn-hero btn-lg" role="button" onclick="location.href='/productAll';">See all
 							product</button>
 					</div>
 				</div>
@@ -90,7 +90,7 @@
 							<h1>Start a new day with a cup of coffee</h1>
 							<h3>Get start your purchase</h3>
 						</hgroup>
-						<button class="btn btn-hero btn-lg" role="button">See all
+						<button class="btn btn-hero btn-lg" role="button" onclick="location.href='/productAll';">See all
 							product</button>
 					</div>
 				</div>

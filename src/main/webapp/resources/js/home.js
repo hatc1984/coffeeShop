@@ -11,4 +11,18 @@ $(document).ready(function() {
 		$("#checkoutAddressBtn").hide();
 		$("#checkoutAddress").show(1000);
 	});
+	
+	$('#input-1').rating({min: 0, max: 5, step: 0.1, stars: 5});
+	
+	
+
+
+	function getCurrentUrl(url, data) {
+		if (!$.isEmptyObject(data)) {
+			url += (url.indexOf('?') >= 0 ? '&' : '?') + $.param(data);
+		}
+
+		return url;
+	}
+	
 })
