@@ -366,7 +366,7 @@ body, h3, h1, h2, div, p {
 
 #products h3 {
 	text-align: center;
-	margin: 0px;
+	margin-top: 20px;
 }
 
 #products table {
@@ -843,7 +843,7 @@ body, h3, h1, h2, div, p {
 
 #orders h3 {
 	text-align: center;
-	margin: 0px;
+	margin-top: 20px;
 }
 
 #orders table {
@@ -858,98 +858,24 @@ body, h3, h1, h2, div, p {
 
 /* CSS for order Detail*/
 #orderDetail {
+	background-image: url("/resources/image/coffee.jpg");
 	margin-bottom: 30px;
-	color: #111;
+	color: white;
 }
 
-#orderDetail span {
-	color: #b12704;
-    font-weight: 700!important;
-    font-size: 20px!important;
+#orderDetail h3 {
+	text-align: center;
+	margin-top: 20px;
 }
 
-#orderDetail div .goodCheckout h3 {
-   	display: inline-block;
-    vertical-align: top;
-    position: relative;
-    margin-right: 40px;
-    width: 150px;
-    top: -20px;
-    color: #0066c0;
-    font-weight: 700!important;
-    font-size: 17px!important;
-    line-height: 1.255!important;
+#orderDetail table {
+    width: 80% !important;
+    margin: auto !important;
+    margin-top: 50px !important;
 }
 
-#orderDetail div.orderList h1 {
-	padding-top: 5px;
-    padding-left: 10px;
-    border-bottom: 1px solid #DDD;
-    height: 60px;
-}
-
-#orderDetail div .goodCheckout {
-    border-bottom: 1px solid #DDD;
-    padding: 10px;
-}
-
-#orderDetail div .goodCheckout a {
-     display: inline-block;
-     margin-right: 40px;
-     width: 250px;
-}
-
-#orderDetail div .goodCheckout a:hover {
-	cursor: pointer;
-}
-
-#orderDetail div .goodCheckout p {
-	display: inline-block;
-    vertical-align: top;
-    position: relative;
-    color: #b12704!important;
- 	font-weight: 700!important;
- 	font-size: 17px!important;
-    line-height: 1.255!important;
-    width: 150px;
-}
-
-#orderDetail div .goodCheckout img {
-	width: 100px;
+#orderDetail table img {
     height: 100px;
-}
-
-#orderDetail .orderList {
-    margin-bottom: 20px;
-    width: 80%;
-    margin-left: 10%;
-    background-color: #FFFFFF;
-    margin-top: 30px;
-}
-
-#orderDetail #backBtn {
-	float: right;
-	position: fixed;
-	bottom: 5px;
-	right: 20px;
-	color: #fff;
-    background-color: #449d44;
-    border-color: #398439;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    display: inline-block;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    width: 150px;
-    font-weight: 700;
-}
-
-#orderDetail a:hover {
-	text-decoration: none;
 }
 
 /* CSS for Sign Up*/

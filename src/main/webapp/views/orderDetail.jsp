@@ -9,22 +9,37 @@
 		<jsp:include page="layout.jsp"></jsp:include>
 	</head>
 	<body id="orderDetail">
+		<jsp:include page="header.jsp"></jsp:include>	
 		<div>
 			<div class="orderList">
-				<h1>All Order Items</h1>
-				<c:forEach items="${orderLines}" var="orderLine">
-					<div class="goodCheckout">
-						<a><img alt="productImage"
-							src="<c:url value="../resources/image/product1.png"/>"></a>
-						<h3>${orderLine.product.productName}</h3>
-						<p>${orderLine.product.description}</p>
-						<p>$${orderLine.product.price}</p>
-						<p>${orderLine.quantity}</p>
-					</div>
-				</c:forEach>
-			</div>
-			<div>
-				<a href="/order/list" id="backBtn">Back</a>
+				<h3>All Order Items</h3>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Product</th>
+									<th>Name</th>
+									<th>Price</th>
+									<th>Description</th>
+									<th>Quantity</th>
+									<th>Shiping Info</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${orderLines}" var="orderLine">
+									<tr>
+										<td>${orderLine.product.id}</td>
+										<td><a><img alt="productImage"
+											src="<c:url value="${orderLine.product.image.get(0).imageLink}"/>"></a></td>
+										<td>${orderLine.product.productName}</td>
+										<td>${orderLine.product.description}</td>
+										<td>${orderLine.product.price}</td>
+										<td>${orderLine.quantity}</td>
+										<td>${orderLine.order.shippingInfo}</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
 			</div>
 		</div>
 	</body>

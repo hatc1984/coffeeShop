@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,11 +60,13 @@
 			</div>
 			<div><strong>Detail Stock: </strong>${product.quantity}</div>
 			<div class="detail">${product.description}</div>
+			<sec:authorize access="hasRole('USER')">
 			<button type="button" class="button-search" onclick="location.href='/buyProduct?code=${product.id}';" 
 					<c:if test="${product.quantity == 0}">disabled</c:if>>
 					<span class="glyphicon glyphicon-shopping-cart"></span>
 					Add to cart
 			</button>
+			</sec:authorize>
 			<div style="margin-top: 5px;">
 				Viet Nam Coffee: Our story is very simple and we are sure that it might be familiar to you. We are small company of like-minded people who can't imagine their existence without a coffee flow in it. In our shop you can find many unique recipes that were carefully polished during almost 20 years of experience.
 			</div>
