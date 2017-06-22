@@ -979,6 +979,108 @@ body, h3, h1, h2, div, p {
 	height: 40px !important;
 }
 
+/*Begin of css for productDetail Page*/
+
+#productDetail {
+	background-color: #F5F5F5;
+	overflow: auto;
+	padding-top: 15px;
+}
+#productDetail .col-sm-2 {
+	background-color: #F5F5F5;
+    padding: 0px;
+}
+
+#productDetail .col-sm-2 img {
+	height: 120px;
+	width: 120px;
+	background-color: white;
+	border: 1px solid #fff;
+}
+
+#productDetail .col-sm-2 > div {
+	height: 130px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+#productDetail .col-sm-2 > div:hover {
+	cursor: pointer;
+}
+
+#productDetail .col-sm-10 {
+	height: 733px;
+	background-color: #F5F5F5;
+}
+
+#productDetail .col-sm-4 {
+	height: 100px;
+	background-color: #F5F5F5;
+}
+
+#productDetail .col-sm-4 h3 {
+    font-size: 30px;
+    line-height: 46px;
+    margin: 0 0 20px;
+    color: #23292f;
+    font-family: "Rubik",sans-serif;
+    font-weight: 300
+}
+
+#productDetail .col-sm-4 h4 {
+	font-size: 30px;
+    color: #23292f;
+    line-height: 50px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+#productDetail .col-sm-4 div {
+	line-height: 30px;
+}
+
+#productDetail .col-sm-4 div.available {
+	border-bottom: 1px solid #ebebeb;
+}
+
+#productDetail .col-sm-4 div label {
+    color: #54B70B;
+}
+
+#productDetail .detail {
+	font: 400 14px/22px "Open Sans",sans-serif;
+	color: #757575;
+}
+
+#productDetail .col-sm-10 img {
+	height: 733px;
+    width: 733px;
+}
+
+#productDetail button {
+    display: inline-block;
+    outline-offset: 0px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    color: rgb(255, 255, 255);
+    background: rgb(18, 164, 221);
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    transition: all 0.3s ease;
+    padding: 0px 35px;
+    font: 400 20px/55px material-design;
+    height: 55px;
+    margin-top: 20px;
+    font: 600 15px/22px "Open Sans",sans-serif;
+}
+
+#productDetail button:hover {
+	background-color: #888B8E;
+}
+/*End of css for productDetail Page*/
+
 footer {
     margin-top: 30px;
     padding-top: 60px;

@@ -107,8 +107,8 @@
 				<c:forEach items="${breakfastProducts}" var="product"
 					varStatus="loop">
 					<div class="item">
-						<img src="${product.image.get(0).imageLink}"
-							alt="${product.image.get(0).imageName}" />
+						<a href="detailProduct?id=${product.id}"><img src="${product.image.get(0).imageLink}"
+							alt="${product.image.get(0).imageName}" /></a>
 						<div class="caption">
 							<div class="name">${product.productName}</div>
 							<div class="description">${product.description}</div>
@@ -132,14 +132,14 @@
 				</c:if>
 				<c:forEach items="${lunchProducts}" var="product" varStatus="loop">
 					<div class="item">
-						<img src="${product.image.get(0).imageLink}"
-							alt="${product.image.get(0).imageName}" />
+						<a href="detailProduct?id=${product.id}"><img src="${product.image.get(0).imageLink}"
+							alt="${product.image.get(0).imageName}" /></a>
 						<div class="caption">
 							<div class="name">${product.productName}</div>
 							<div class="description">${product.description}</div>
 							<div class="price">$${product.price}</div>
 							<sec:authorize access="hasRole('USER')">
-								<a class="btn btn-danger"
+								<a class="addToCartBtn"
 									href="/buyProduct?code=${product.id}"> <span
 									class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
 								</a>
@@ -157,14 +157,14 @@
 				</c:if>
 				<c:forEach items="${dinnerProducts}" var="product" varStatus="loop">
 					<div class="item">
-						<img src="${product.image.get(0).imageLink}"
-							alt="${product.image.get(0).imageName}" />
+						<a href="detailProduct?id=${product.id}"><img src="${product.image.get(0).imageLink}"
+							alt="${product.image.get(0).imageName}" /></a>
 						<div class="caption">
 							<div class="name">${product.productName}</div>
 							<div class="description">${product.description}</div>
 							<div class="price">$${product.price}</div>
 							<sec:authorize access="hasRole('USER')">
-								<a class="btn btn-danger"
+								<a class="addToCartBtn"
 									href="/buyProduct?code=${product.id}"> <span
 									class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
 								</a>
