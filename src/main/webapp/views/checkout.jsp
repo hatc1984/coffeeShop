@@ -130,7 +130,7 @@
 				
 				<button type="submit" class="btn btn-success">Check Out</button>
 				
-				<a href="user/list" class="btn btn-info">Back</a>
+				<a href="/shoppingCart" class="btn btn-info">Back</a>
 
 				<input type="hidden" name="${_csrf.parameterName}"
 					value="${_csrf.token}" />

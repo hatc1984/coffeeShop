@@ -61,5 +61,17 @@ public class Address {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
+	
+	public String toString() {
+		StringBuilder combine = new StringBuilder();
+		return combine.append(city)
+				.append(" ,")
+				.append(state)
+				.append(" ,")
+				.append(country)
+				.append(" ,")
+				.append(zipcode)
+				.toString(); 
+	}
 
 }

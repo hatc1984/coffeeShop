@@ -6,6 +6,8 @@ import java.security.Principal;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,7 @@ import edu.mum.coffee.domain.CartInfo;
 import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.domain.ProductInfo;
 import edu.mum.coffee.domain.User;
+import edu.mum.coffee.service.OrderService;
 import edu.mum.coffee.service.ProductService;
 import edu.mum.coffee.service.UserService;
 import edu.mum.coffee.util.Utils;
@@ -34,6 +37,9 @@ public class CartController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	OrderService orderService;
 	
    @RequestMapping({ "/buyProduct" })
    public String listProductHandler(HttpServletRequest request, Model model, 
@@ -158,10 +164,9 @@ public class CartController {
  
    @RequestMapping(value = { "/shoppingCartConfirmation" }, method = RequestMethod.POST)
    @Transactional(propagation = Propagation.NEVER)
-   public String shoppingCartConfirmationSave(HttpServletRequest request, Model model) {
+   public String shoppingCartConfirmationSave(@ModelAttribute("checkoutForm") User ship_customer, HttpServletRequest request, Model model) {
        CartInfo cartInfo = Utils.getCartInSession(request);
- 
-    
+
        if (cartInfo.isEmpty()) {  
            return "redirect:/shoppingCart";
        } else if (!cartInfo.isValidCustomer()) {
@@ -170,6 +175,8 @@ public class CartController {
        }
        try {
            //orderDAO.saveOrder(cartInfo);   // TODO: Save order to database
+    	   orderService.save(ship_customer, cartInfo);
+    	   
        } catch (Exception e) {
         
            return "shoppingCartConfirmation";
@@ -186,6 +193,25 @@ public class CartController {
        // Finish.
        return "redirect:/shoppingCartFinalize";
    }
+   
+	@RequestMapping(value = "modify" , method = RequestMethod.POST)
+	public String modifyUser(@ModelAttribute("user") @Validated User user,BindingResult result, Model model, HttpServletRequest request) throws Throwable {
+		if (!result.hasErrors()) {
+			userService.update(user);
+		} else {
+			model.addAttribute("user", user);
+			return "modifyUser"; 
+		}
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String r= auth.getAuthorities().toString();
+		if ("[ROLE_USER]".equals(r)) {
+			return "redirect:/home";
+		} else {
+			return "redirect:list";
+		}
+	}
+    
  
    @RequestMapping(value = { "/shoppingCartFinalize" }, method = RequestMethod.GET)
    public String shoppingCartFinalize(HttpServletRequest request, Model model) {

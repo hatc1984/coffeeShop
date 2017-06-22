@@ -30,6 +30,8 @@ public class Order {
 	private List<Orderline> orderLines = new ArrayList<Orderline>();
 	@OneToOne
 	private Person person;
+	
+	String shippingInfo;
 
 	public int getId() {
 		return id;
@@ -112,5 +114,14 @@ public class Order {
 			}
 		}
 	}
+
+	public String getShippingInfo() {
+		return shippingInfo;
+	}
+
+	public void setShippingInfo(String shippingInfo) {
+		this.shippingInfo = shippingInfo;
+	}
+	
 
 }
