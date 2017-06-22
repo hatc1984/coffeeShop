@@ -27,5 +27,7 @@
    <div class="container">
        <h3>Thank you for Order</h3>
    </div>
+   
+   <jsp:include page="footer.jsp" />
 </body>
 </html>
