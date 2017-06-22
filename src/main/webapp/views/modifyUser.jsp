@@ -96,6 +96,7 @@
 					<form:hidden path="passwordConfirm" value="dummy"/>
 				</c:if>
 
+				<sec:authorize access="hasRole('ADMIN')">
 				<div class="form-group">
 					<form:label path="authority">
 						<spring:message text="Role" />
@@ -106,6 +107,7 @@
 					</form:select>
 					<form:errors path="authority" cssClass="errorSignUp" />
 				</div>
+				</sec:authorize>
 
 
 				<div class="form-group">

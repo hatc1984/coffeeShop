@@ -42,8 +42,8 @@
 			<h3>${product.productName}</h3>
 			<h4>$${product.price}</h4>
 			<hr/>
-			<div><strong>Brand: </strong> ${product.productType}</div>
-			<div><strong>Manufacturer: </strong> ${product.manufacturer}</div>
+			<div><strong>Type: </strong> ${product.productType}</div>
+			<div><strong>Made in: </strong> ${product.manufacturer}</div>
 			<div><strong>Detail Stock: </strong>${product.quantity}</div>
 			<div class="detail">${product.description}</div>
 			<sec:authorize access="hasRole('USER')">
