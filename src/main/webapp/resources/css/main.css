@@ -184,6 +184,7 @@ body, h3, h1, h2, div, p {
 
 #home #coffee {
 	margin-top: 30px;
+	text-align: left;
 }
 
 #home h3 {

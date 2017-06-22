@@ -37,6 +37,9 @@ public class OrderService {
 		for( CartLineInfo cl:cartlines){
 			Orderline orderLine = new Orderline();
 			orderLine.setQuantity(cl.getQuantity());
+			Product editedProduct = productService.getProduct(cl.getProductInfo().getId());
+			editedProduct.setQuantity(editedProduct.getQuantity()-cl.getQuantity());
+			productService.save(editedProduct);
 			orderLine.setProduct(productService.getProduct(cl.getProductInfo().getId()));
 			orderLine.setOrder(order);
 			order.addOrderLine(orderLine);

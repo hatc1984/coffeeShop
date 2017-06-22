@@ -113,6 +113,17 @@
 							<div class="name">${product.productName}</div>
 							<div class="description">${product.description}</div>
 							<div class="price">$${product.price}</div>
+							<div class="available">
+								<strong>Availability: </strong>
+								<c:choose>
+									<c:when test="${product.quantity > 0}">
+										<label>In Stock</label>
+									</c:when>
+									<c:otherwise>
+										<label>Out Of Stock</label>
+									</c:otherwise>
+								</c:choose>
+							</div><br>
 							<sec:authorize access="hasRole('USER')">
 								<a class="addToCartBtn"
 									href="/buyProduct?code=${product.id}"> <span
@@ -138,6 +149,17 @@
 							<div class="name">${product.productName}</div>
 							<div class="description">${product.description}</div>
 							<div class="price">$${product.price}</div>
+							<div class="available">
+								<strong>Availability: </strong>
+								<c:choose>
+									<c:when test="${product.quantity > 0}">
+										<label>In Stock</label>
+									</c:when>
+									<c:otherwise>
+										<label>Out Of Stock</label>
+									</c:otherwise>
+								</c:choose>
+							</div><br>
 							<sec:authorize access="hasRole('USER')">
 								<a class="addToCartBtn"
 									href="/buyProduct?code=${product.id}"> <span

@@ -128,7 +128,7 @@ public class CartController {
    }
  
   
-   // POST: Save thông tin khách hàng.
+   // POST: 
    @RequestMapping(value = { "/checkout" }, method = RequestMethod.POST)
    public String shoppingCartCustomerSave(HttpServletRequest request, //
            Model model, //
