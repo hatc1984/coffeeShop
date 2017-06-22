@@ -6,12 +6,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>thank you</title>
-<link rel="stylesheet" href='<c:url value="resources/css/style.css"/>' />
+<jsp:include page="layout.jsp"></jsp:include>
 </head>
 <body>
 	<div id="thankyou">
 		<div class="container">
-	
+			
 		</div>
 	</div>
 </body>
