@@ -986,6 +986,7 @@ body, h3, h1, h2, div, p {
 	overflow: auto;
 	padding-top: 15px;
 }
+
 #productDetail .col-sm-2 {
 	background-color: #F5F5F5;
     padding: 0px;
@@ -995,7 +996,15 @@ body, h3, h1, h2, div, p {
 	height: 120px;
 	width: 120px;
 	background-color: white;
-	border: 1px solid #fff;
+	border: 1px solid #dddddd;
+}
+
+#productDetail .col-sm-2 img:hover,#productDetail .col-sm-2 img:focus {
+	border: 2px solid #333;
+}
+
+#productDetail .col-sm-8 {
+    width: 60%;
 }
 
 #productDetail .col-sm-2 > div {
@@ -1009,29 +1018,60 @@ body, h3, h1, h2, div, p {
 }
 
 #productDetail .col-sm-10 {
-	height: 733px;
+	height: 500px;
 	background-color: #F5F5F5;
 }
 
 #productDetail .col-sm-4 {
-	height: 100px;
 	background-color: #F5F5F5;
 }
 
+#productDetail .col-sm-4 .statusProduct > div {
+	display: inline;
+	margin-right: 50px;
+}
+
+#productDetail .col-sm-4 .statusProduct > div span {
+    border-radius: 1000px;
+    color: #333;
+    font-weight: bold;
+    background: #eee;
+    padding: 0 10px;
+    display: inline-block;
+    line-height: 24px;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+
 #productDetail .col-sm-4 h3 {
-    font-size: 30px;
-    line-height: 46px;
+    font-size: 48px;
+    line-height: 54px;
+    margin-bottom: 46px;
+    font-style: italic;
+    font-weight: 900;
+    font-family: 'Playfair Display',serif;
+    padding: 0;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    color: #ff8a2b;
     margin: 0 0 20px;
-    color: #23292f;
-    font-family: "Rubik",sans-serif;
-    font-weight: 300
 }
 
 #productDetail .col-sm-4 h4 {
-	font-size: 30px;
-    color: #23292f;
-    line-height: 50px;
-    border-bottom: 1px solid #ebebeb;
+    color: #ff8a2b;
+    font-size: 34px;
+    line-height: 36px;
+    font-weight: 700;
+    font-family: "Lobster",cursive;
+}
+
+#productDetail hr {
+	margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #dddddd;
 }
 
 #productDetail .col-sm-4 div {
@@ -1052,8 +1092,8 @@ body, h3, h1, h2, div, p {
 }
 
 #productDetail .col-sm-10 img {
-	height: 733px;
-    width: 733px;
+	height: 500px;
+    width: 500px;
 }
 
 #productDetail button {
@@ -1078,6 +1118,47 @@ body, h3, h1, h2, div, p {
 
 #productDetail button:hover {
 	background-color: #888B8E;
+}
+
+#productDetail .backToHome {
+	background: #ff8a2b;
+	color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 28px;
+    outline: none;
+    padding: 8px 20px 9px;
+    text-shadow: none;
+    box-shadow: none;
+    text-align: center;
+    font-weight: 700;
+    font-style: italic;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Playfair Display',serif;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    border: none;
+    transition: all 0.4s ease;
+	text-decoration: none;
+}
+
+#productDetail .backToHome:hover,#productDetail .backToHome:focus {
+	background-color: #141D23;
+}
+
+#productDetail .backToHome .fa {
+	margin: 0 3px;
+    position: relative;
+    top: 0px!important;
+    display: inline-block;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+#productDetail .form-group {
+	margin-left: 45px;
 }
 /*End of css for productDetail Page*/
 
@@ -1178,4 +1259,6 @@ ul {
 	margin-right: 20px;
 	margin-top: 5px;
 }
+
+
 

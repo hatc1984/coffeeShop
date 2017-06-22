@@ -1,4 +1,4 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -14,5 +14,6 @@
 		<link rel="icon" href="../resources/image/icon.png" />
 		
 		<link rel="stylesheet" href="../resources/font-awesome/css/font-awesome.min.css">
+		<script src="<c:url value="../resources/js/jquery.elevatezoom.js" />"></script>
 	</head>
 </html>
