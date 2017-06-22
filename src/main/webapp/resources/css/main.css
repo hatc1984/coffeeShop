@@ -182,7 +182,7 @@ body, h3, h1, h2, div, p {
 	color: #fff;
 }
 
-#home #breakfast {
+#home #coffee {
 	margin-top: 30px;
 }
 
@@ -330,7 +330,7 @@ body, h3, h1, h2, div, p {
 
 /*CSS products Page*/
 .error {
-	color: #b9041c;
+	color: red;
 	font-weight: bold;
 }
 
@@ -420,9 +420,10 @@ body, h3, h1, h2, div, p {
 
 /*CSS Modify Product*/
 #modifyProduct {
-	background-color: #7E8F7C;
-	/* 	height: 900px; */
 	padding-bottom: 100px;
+	background-image: url("../image/modifyProduct.jpg");
+	background-size: cover;
+	color: white;
 }
 
 #modifyProduct #productImage {
@@ -441,6 +442,7 @@ body, h3, h1, h2, div, p {
 	cursor: pointer;
 	height: 30px;
 	padding: 5px;
+	color: black;
 }
 
 #modifyProduct .glyphicon {

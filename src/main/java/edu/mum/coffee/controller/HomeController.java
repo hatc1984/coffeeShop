@@ -40,9 +40,15 @@ public class HomeController {
 	public String homePage(Model model, HttpServletRequest request) {
 		List<Product> products = productService.getAllProduct();
 		Map<ProductType,List<Product>> result = classifyProduct(products);
-		model.addAttribute("breakfastProducts", result.get(ProductType.BREAKFAST));
-		model.addAttribute("lunchProducts", result.get(ProductType.LUNCH));
-		model.addAttribute("dinnerProducts", result.get(ProductType.DINNER));
+
+		List<Product> coffee = new ArrayList<>();
+		coffee.addAll(result.get(ProductType.BREAKFAST));
+		coffee.addAll(result.get(ProductType.LUNCH));
+		coffee.addAll(result.get(ProductType.DINNER));
+		
+		model.addAttribute("coffee", coffee);
+		model.addAttribute("tea", result.get(ProductType.TEA));
+		
 		return "home";
 	}
 	
@@ -98,22 +104,26 @@ public class HomeController {
 	}
 	
 	private Map<ProductType,List<Product>> classifyProduct(List<Product> products) {
-		List<Product> productsBF = new ArrayList<>();
-		List<Product> productsLunch = new ArrayList<>();
-		List<Product> productsDinner = new ArrayList<>();
+		List<Product> coffeeBF = new ArrayList<>();
+		List<Product> coffeeLunch = new ArrayList<>();
+		List<Product> coffeeDinner = new ArrayList<>();
+		List<Product> tea = new ArrayList<>();
 		for (Product product : products) {
 			if (product.getProductType() == ProductType.BREAKFAST) {
-				productsBF.add(product);
+				coffeeBF.add(product);
 			} else if (product.getProductType() == ProductType.LUNCH) {
-				productsLunch.add(product);
+				coffeeLunch.add(product);
+			} else if (product.getProductType() == ProductType.DINNER) {
+				coffeeDinner.add(product);
 			} else {
-				productsDinner.add(product);
+				tea.add(product);
 			}
 		}
 		Map<ProductType, List<Product>> result = new HashMap<>();
-		result.put(ProductType.BREAKFAST, productsBF);
-		result.put(ProductType.LUNCH, productsLunch);
-		result.put(ProductType.DINNER, productsDinner);
+		result.put(ProductType.BREAKFAST, coffeeBF);
+		result.put(ProductType.LUNCH, coffeeLunch);
+		result.put(ProductType.DINNER, coffeeDinner);
+		result.put(ProductType.TEA, tea);
 		return result;
 	}
 }

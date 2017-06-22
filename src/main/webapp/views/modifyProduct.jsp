@@ -10,8 +10,8 @@
 		<title>Modify Product</title>
 		<jsp:include page="layout.jsp"></jsp:include>
 	</head>
-	<body>
-		<div id="modifyProduct">
+	<body id="modifyProduct">
+		<div>
 			<c:choose>
 				<c:when test="${product.id == 0}">
 					<h3><spring:message text="Add Product" /></h3>

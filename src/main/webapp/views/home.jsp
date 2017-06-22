@@ -96,15 +96,15 @@
 				</div>
 			</div>
 		</div>
-		<div id="breakfast">
+		<div id="coffee">
 			<div class="module_header">
-				<h3>Breakfast</h3>
+				<h3>Coffee</h3>
 			</div>
 			<div class="content">
-				<c:if test="${breakfastProducts.size() == 0}">
+				<c:if test="${coffee.size() == 0}">
 					<h1>No product at this category</h1>					
 				</c:if>
-				<c:forEach items="${breakfastProducts}" var="product"
+				<c:forEach items="${coffee}" var="product"
 					varStatus="loop">
 					<div class="item">
 						<a href="detailProduct?id=${product.id}"><img src="${product.image.get(0).imageLink}"
@@ -124,38 +124,13 @@
 				</c:forEach>
 			</div>
 		</div>
-		<div id="lunch">
-			<h3>Lunch</h3>
+		<div id="tea">
+			<h3>Tea</h3>
 			<div class="content">
-				<c:if test="${lunchProducts.size() == 0}">
+				<c:if test="${tea.size() == 0}">
 					<h1>No product at this category</h1>					
 				</c:if>
-				<c:forEach items="${lunchProducts}" var="product" varStatus="loop">
-					<div class="item">
-						<a href="detailProduct?id=${product.id}"><img src="${product.image.get(0).imageLink}"
-							alt="${product.image.get(0).imageName}" /></a>
-						<div class="caption">
-							<div class="name">${product.productName}</div>
-							<div class="description">${product.description}</div>
-							<div class="price">$${product.price}</div>
-							<sec:authorize access="hasRole('USER')">
-								<a class="addToCartBtn"
-									href="/buyProduct?code=${product.id}"> <span
-									class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
-								</a>
-							</sec:authorize>
-						</div>
-					</div>
-				</c:forEach>
-			</div>
-		</div>
-		<div id="dinner">
-			<h3>Dinner</h3>
-			<div class="content">
-				<c:if test="${dinnerProducts.size() == 0}">
-					<h1>No product at this category</h1>					
-				</c:if>
-				<c:forEach items="${dinnerProducts}" var="product" varStatus="loop">
+				<c:forEach items="${tea}" var="product" varStatus="loop">
 					<div class="item">
 						<a href="detailProduct?id=${product.id}"><img src="${product.image.get(0).imageLink}"
 							alt="${product.image.get(0).imageName}" /></a>
@@ -175,9 +150,6 @@
 			</div>
 		</div>
 	</div>
-
-
-
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
