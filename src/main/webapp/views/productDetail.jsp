@@ -14,9 +14,6 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div id="productDetail">
-		<div class="form-group">
-			<a href="/home" class="backToHome"><span><i class="fa fa-reply"></i>Back to: Home</span></a>
-		</div>
 		<div class="col-sm-8">
 			<div class="col-sm-2">
 				<c:forEach items="${product.image}" var="item" begin="0" end="3">
@@ -47,17 +44,6 @@
 			<hr/>
 			<div><strong>Brand: </strong> ${product.productType}</div>
 			<div><strong>Manufacturer: </strong> ${product.manufacturer}</div>
-			<div><strong>ProductCode: </strong> ${product.id}</div>
-			<div class="available"><strong>Availability: </strong>
-				<c:choose>
-					<c:when test="${product.quantity > 0}">
-						<label>In Stock</label>
-					</c:when>
-					<c:otherwise>
-						<label>Out Of Stock</label>
-					</c:otherwise>
-				</c:choose>
-			</div>
 			<div><strong>Detail Stock: </strong>${product.quantity}</div>
 			<div class="detail">${product.description}</div>
 			<sec:authorize access="hasRole('USER')">

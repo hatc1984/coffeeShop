@@ -13,6 +13,7 @@
 <jsp:include page="layout.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>	
 	<div id="modifyUser">
 		<div id="modifyUser">
 			<c:choose>

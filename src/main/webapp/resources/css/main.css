@@ -422,7 +422,6 @@ body, h3, h1, h2, div, p {
 /*CSS Modify Product*/
 #modifyProduct {
 	padding-bottom: 100px;
-	background-image: url("../image/modifyProduct.jpg");
 	background-size: cover;
 	color: white;
 }
@@ -459,8 +458,10 @@ body, h3, h1, h2, div, p {
 }
 
 #modifyProduct form {
-	width: 80%;
-	margin-left: 10px;
+	width: 90%;
+    margin-left: 5%;
+    margin-right: 10px;
+    margin-top: 15px;
 }
 
 /*CSS for users Page*/

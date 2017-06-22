@@ -11,6 +11,7 @@
 		<jsp:include page="layout.jsp"></jsp:include>
 	</head>
 	<body id="modifyProduct">
+	<jsp:include page="header.jsp"></jsp:include>	
 		<div>
 			<c:choose>
 				<c:when test="${product.id == 0}">
