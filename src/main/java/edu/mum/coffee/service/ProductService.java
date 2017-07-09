@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.domain.ProductType;
 import edu.mum.coffee.repository.ProductRepository;
+import edu.mum.coffee.util.ProductUtil;
 
 @Service
 @Transactional
@@ -24,6 +25,10 @@ public class ProductService   {
 	private ProductRepository productRepository;
 		
 	public Product save(Product product) {
+		if (!ProductUtil.isNewProduct(product)) {
+			Product productToMap = getProduct(product.getId());
+			product.setImage(productToMap.getImage());
+		}
 		return productRepository.save(product);
 	}
 	
@@ -69,6 +74,21 @@ public class ProductService   {
 			criteria = "%"+criteria+"%";
 		}
 		return productRepository.findByProductNameLikeOrDescriptionLikeAllIgnoreCase(criteria, criteria);
+	}
+	
+	public List<Product> deleteAPI(int productId) {
+		deleteById(productId);
+		return getAllProduct();
+	}
+
+	public List<Product> updateProductAPI(Product product) {
+		save(product);
+		return getAllProduct();
+	}
+
+	public List<Product> insertProductAPI(Product product) {
+		save(product);
+		return getAllProduct();
 	}
 	
 }
