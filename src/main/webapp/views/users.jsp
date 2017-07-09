@@ -33,7 +33,7 @@
 							<th>Email</th>
 							<th>Role</th>
 							<sec:authorize access="hasRole('ADMIN')">
-								<th colspan="2" id="action" style="text-align: center;">Action</th>
+								<th colspan="2" id="action">Action</th>
 							</sec:authorize>
 						</tr>
 					</thead>

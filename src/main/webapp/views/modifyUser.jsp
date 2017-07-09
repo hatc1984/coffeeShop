@@ -12,9 +12,9 @@
 <title>Modify User</title>
 <jsp:include page="layout.jsp"></jsp:include>
 </head>
-<body>
+<body id="modifyUser">
 <jsp:include page="header.jsp"></jsp:include>	
-	<div id="modifyUser">
+	<div>
 		<div id="modifyUser">
 			<c:choose>
 				<c:when test="${user.id == 0}">
@@ -71,9 +71,9 @@
 								<spring:message text="First Name" />
 							</form:label>
 							<form:input path="firstName" type="text" name="firstName"
-								id="firstName" class="form-control input-sm"
+								id="firstName" class="form-control "
 								placeholder="First Name"
-								cssErrorClass="form-control input-sm errorInput" />
+								cssErrorClass="form-control  errorInput" />
 							<form:errors path="firstName" cssClass="errorSignUp" />
 						</div>
 					</div>
@@ -83,9 +83,9 @@
 								<spring:message text="Last Name" />
 							</form:label>
 							<form:input path="lastName" type="text" name="lastName"
-								id="lastName" class="form-control input-sm"
+								id="lastName" class="form-control "
 								placeholder="Last Name"
-								cssErrorClass="form-control input-sm errorInput" />
+								cssErrorClass="form-control  errorInput" />
 							<form:errors path="lastName" cssClass="errorSignUp" />
 						</div>
 					</div>
@@ -115,8 +115,8 @@
 						<spring:message text="Email" />
 					</form:label>
 					<form:input path="email" type="text" name="email" id="email"
-						class="form-control input-sm" placeholder="Email Address"
-						cssErrorClass="form-control input-sm errorInput" />
+						class="form-control " placeholder="Email Address"
+						cssErrorClass="form-control  errorInput" />
 					<form:errors path="email" cssClass="errorSignUp" />
 				</div>
 
@@ -129,9 +129,9 @@
 									<spring:message text="Password" />
 								</form:label>
 								<form:input path="password" type="password" name="password"
-									id="password" class="form-control input-sm"
+									id="password" class="form-control "
 									placeholder="Password"
-									cssErrorClass="form-control input-sm errorInput" />
+									cssErrorClass="form-control  errorInput" />
 								<form:errors path="password" cssClass="errorSignUp" />
 								<div class="errorSignUp">${errorPasswordConfirm}</div>
 							</div>
@@ -143,8 +143,8 @@
 								</form:label>
 								<form:input path="passwordConfirm" type="password"
 									name="passwordConfirm" id="passwordConfirm"
-									class="form-control input-sm" placeholder="Confirm Password"
-									cssErrorClass="form-control input-sm errorInput" />
+									class="form-control " placeholder="Confirm Password"
+									cssErrorClass="form-control  errorInput" />
 							</div>
 						</div>
 					</div>
@@ -155,8 +155,8 @@
 						<spring:message text="Phone" />
 					</form:label>
 					<form:input path="phone" type="text" name="phone" id="phone"
-						class="form-control input-sm" placeholder="Phone Number"
-						cssErrorClass="form-control input-sm errorInput" />
+						class="form-control " placeholder="Phone Number"
+						cssErrorClass="form-control  errorInput" />
 					<form:errors path="phone" cssClass="errorSignUp" />
 				</div>
 
@@ -167,8 +167,8 @@
 						<spring:message text="City" />
 					</form:label>
 					<form:input path="address.city" type="text" name="city" id="city"
-						class="form-control input-sm" placeholder="City"
-						cssErrorClass="form-control input-sm errorInput" />
+						class="form-control " placeholder="City"
+						cssErrorClass="form-control  errorInput" />
 					<form:errors path="address.city" cssClass="errorSignUp" />
 				</div>
 
@@ -177,8 +177,8 @@
 						<spring:message text="State" />
 					</form:label>
 					<form:input path="address.state" type="text" name="state"
-						id="state" class="form-control input-sm" placeholder="State"
-						cssErrorClass="form-control input-sm errorInput" />
+						id="state" class="form-control " placeholder="State"
+						cssErrorClass="form-control  errorInput" />
 					<form:errors path="address.state" cssClass="errorSignUp" />
 				</div>
 
@@ -187,8 +187,8 @@
 						<spring:message text="Country" />
 					</form:label>
 					<form:input path="address.country" type="text" name="country"
-						id="country" class="form-control input-sm" placeholder="Country"
-						cssErrorClass="form-control input-sm errorInput" />
+						id="country" class="form-control " placeholder="Country"
+						cssErrorClass="form-control  errorInput" />
 					<form:errors path="address.country" cssClass="errorSignUp" />
 				</div>
 
@@ -197,8 +197,8 @@
 						<spring:message text="ZipCode" />
 					</form:label>
 					<form:input path="address.zipcode" type="text" name="zipcode"
-						id="zipcode" class="form-control input-sm" placeholder="Zipcode"
-						cssErrorClass="form-control input-sm errorInput" />
+						id="zipcode" class="form-control " placeholder="Zipcode"
+						cssErrorClass="form-control  errorInput" />
 					<form:errors path="address.zipcode" cssClass="errorSignUp" />
 				</div>
 

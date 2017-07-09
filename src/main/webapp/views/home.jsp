@@ -107,7 +107,7 @@
 				<c:forEach items="${coffee}" var="product"
 					varStatus="loop">
 					<div class="item">
-						<a href="detailProduct?id=${product.id}"><img src="${product.image.get(0).imageLink}"
+						<a href="detailProduct?id=${product.id}"><img src="${product.image != null ? product.image.get(0).imageLink : null}"
 							alt="${product.image.get(0).imageName}" /></a>
 						<div class="caption">
 							<div class="name">${product.productName}</div>

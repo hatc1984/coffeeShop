@@ -521,7 +521,7 @@ body, h3, h1, h2, div, p {
 }
 
 #users table #action {
-	padding-left: 100px;
+	padding-left: 85px;
 }
 
 #users #addLnk {
@@ -593,8 +593,7 @@ body, h3, h1, h2, div, p {
 
 /*modifyUser*/
 #modifyUser {
-	width: 100%;
-	background-repeat: no-repeat;
+	background-color: #E9EBEE;
 }
 
 #modifyUser h3 {
@@ -608,6 +607,44 @@ body, h3, h1, h2, div, p {
 	margin-left: 5%;
 	margin-right: 10px;
 	margin-top: 15px;
+	background-color: #fff;
+}
+
+#modifyUser .row {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+#modifyUser .row .col-xs-6 {
+	padding-right: 0px; 
+    padding-left: 0px;
+}
+
+#modifyUser .row .form-group {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#modifyUser .row .col-xs-6:nth-child(2) .form-group:nth-child(1) {
+	margin-left: 10px !important;
+}
+
+#modifyUser .form-group {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+#modifyUser .form-group:nth-child(1) {
+	padding-top: 15px;
+}
+
+#modifyUser .btn-success {
+	margin-left: 5%;
+	margin-bottom: 3%;
+}
+
+#modifyUser .btn-info {
+	margin-bottom: 3%;
 }
 
 /*CSS Modify Person*/
@@ -901,6 +938,11 @@ body, h3, h1, h2, div, p {
 
 #orderDetail table img {
     height: 100px;
+    background-color: #434A4F;
+}
+
+#orderDetail td:nth-child(7) {
+	width: 210px;
 }
 
 /* CSS for Sign Up*/

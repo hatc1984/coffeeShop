@@ -10,6 +10,10 @@
 <title>product detail</title>
 <jsp:include page="layout.jsp"></jsp:include>
 <script type="text/javascript" src="../resources/js/home.js"></script>
+
+<link rel="stylesheet" href="<c:url value="../resources/css/star-rating.css" />">
+
+<script type="text/javascript" src="../resources/js/star-rating.js"></script>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -41,6 +45,7 @@
 			</div>
 			<h3>${product.productName}</h3>
 			<h4>$${product.price}</h4>
+			<input id="input-1" name="input-1" value="4.3" class="rating-loading">
 			<hr/>
 			<div><strong>Type: </strong> ${product.productType}</div>
 			<div><strong>Made in: </strong> ${product.manufacturer}</div>
