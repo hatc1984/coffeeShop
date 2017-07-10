@@ -1,13 +1,13 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page session="true"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8" />
-<title>Login Page</title>
-<jsp:include page="layout.jsp"></jsp:include>
-</head>
-<body class="main-content">
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+
+<tiles:insertDefinition name="layout.basic">
+	<tiles:putAttribute name="title">
+		Login Page
+	</tiles:putAttribute>
+	<tiles:putAttribute name="body">
+		<div class="main-content">
 	<div id="login">
 		<div class="container">
 			<h3>Login to continue</h3>
@@ -42,5 +42,7 @@
 			</form>
 		</div>
 	</div>
-</body>
-</html>
+</div>
+	</tiles:putAttribute>
+</tiles:insertDefinition>
+

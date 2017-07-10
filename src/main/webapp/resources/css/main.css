@@ -15,6 +15,36 @@ body, h3, h1, h2, div, p {
 	height: 55px;
 }
 
+#header .userInfo {
+	width: 120px;
+	margin-right: 50px;
+	background-color: rgb(245,245,245);
+	display: none;
+	position: absolute;
+    left: 90%;
+    z-index: 1;
+}
+
+#header .userInfo hr {
+  	margin-top: 5px;
+  	margin-bottom: 5px;
+}
+
+#header .userInfo a {
+	color: #000;
+	margin-left: 5px;
+}
+
+#header .userInfo a:hover,#header .userInfo a:focus {
+	text-decoration: none;
+	color: #000;
+}
+
+#header .userInfo li:hover,#header .userInfo li:focus {
+	cursor: pointer;
+	background-color: #FF8A2B;
+}
+
 #header ul li {
 	padding-top: 5px;
 }
@@ -357,6 +387,7 @@ body, h3, h1, h2, div, p {
 	background-image: url("/resources/image/home.jpg");
 	color: white;
 	background-size: cover;
+	height: 100vh;
 }
 
 #products .productNotExist {
@@ -368,7 +399,8 @@ body, h3, h1, h2, div, p {
 
 #products h3 {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 0px;
+	padding-top: 20px;
 }
 
 #products table {
@@ -491,6 +523,7 @@ body, h3, h1, h2, div, p {
 	width: 100%;
 	color: white;
 	background-size: cover;
+	height: 100vh;
 }
 
 #users .productNotExist {
@@ -510,7 +543,8 @@ body, h3, h1, h2, div, p {
 
 #users h3 {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 0px;
+	padding-top: 20px;
 }
 
 #users table {
@@ -709,6 +743,14 @@ body, h3, h1, h2, div, p {
 	width: 100%;
 }
 
+#login h3 {
+	color: #000;
+}
+
+#login label {
+	color: #000;
+}
+
 #login .btn-primary {
 	width: 100%;
 	margin-top: -10px;
@@ -899,11 +941,13 @@ body, h3, h1, h2, div, p {
 	background-image: url("/resources/image/coffee.jpg");
 	color: white;
 	background-size: cover;
+	height: 100vh;
 }
 
 #orders h3 {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 0px;
+	padding-top: 20px;
 }
 
 #orders table {
@@ -922,11 +966,13 @@ body, h3, h1, h2, div, p {
 	background-image: url("/resources/image/coffee.jpg");
 	margin-bottom: 30px;
 	color: white;
+	height: 100vh;
 }
 
 #orderDetail h3 {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 0px;
+	padding-top: 20px;
 }
 
 #orderDetail table {

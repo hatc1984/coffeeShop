@@ -1,18 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Access Denied Page</title>
-		<jsp:include page="layout.jsp"></jsp:include>
-	</head>
-	<body>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<tiles:insertDefinition name="layout.basic">
+	<tiles:putAttribute name="title">
+		Access Denied Page
+	</tiles:putAttribute>
+	<tiles:putAttribute name="body">
 		<div id="error404">
-			<div class="container">
-				
-			</div>
+			<div class="container"></div>
 		</div>
-	</body>
-</html>
+	</tiles:putAttribute>
+</tiles:insertDefinition>
+
+

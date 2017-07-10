@@ -14,9 +14,6 @@ $(document).ready(function() {
 	
 	$('#input-1').rating({min: 0, max: 5, step: 0.1, stars: 5});
 	
-	
-
-
 	function getCurrentUrl(url, data) {
 		if (!$.isEmptyObject(data)) {
 			url += (url.indexOf('?') >= 0 ? '&' : '?') + $.param(data);
@@ -24,5 +21,17 @@ $(document).ready(function() {
 
 		return url;
 	}
+	
+	$(".user-icon").hover(function() {
+		$(".userInfo").show('slow');
+	});
+	
+	$('body').click(function() {
+	    $(".userInfo").hide('slow');
+	});
+	
+	$('.userInfo').click(function(e) {
+	    e.stopPropagation();
+	});
 	
 })
